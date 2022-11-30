@@ -75,14 +75,36 @@ use ('xiyaowong/nvim-transparent')--transparent background
   use('kyazdani42/nvim-tree.lua') 
 
   --LSP plugins
-  use('neovim/nvim-lspconfig')
-  use('williamboman/nvim-lsp-installer')
-  use('williamboman/mason.nvim')
-  use('williamboman/mason-lspconfig.nvim')
   use('jose-elias-alvarez/null-ls.nvim')
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }
+  use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
+  use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
+  use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
+  use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
+
+
+  --lua line 
+  use("nvim-lualine/lualine.nvim")
+  
+  --teliscope fuzzy finder
+  use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
+  use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
+
+  --auto closing
+    use('windwp/nvim-autopairs')
+    use('windwp/nvim-ts-autotag')
+
+  --git intigration
+    use('lewis6991/gitsigns.nvim')  
 
   --done with plugin imports
 if packer_bootstrap then
     require("packer").sync() 
   end
 end)
+
+
