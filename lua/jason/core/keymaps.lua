@@ -65,3 +65,15 @@ keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if ne
 keymap.set("n", "<leader>sp", function ()
   vim_opt_toggle("spell", true,false,"Spelling")
   end)
+
+--useful keymap that turns the semicolon into a colon in normal mode 
+keymap.set("n", ";",":")
+
+--update with leader w 
+keymap.set("n", "<leader>w", ":up<cr>")
+
+--save and quit with leader q
+keymap.set("n","<leader>q", ":wq<cr>")
+
+--exit without saving with leader ESC
+keymap.set("n","<leader><ESC>", ":q!<cr>")
