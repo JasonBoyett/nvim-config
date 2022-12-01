@@ -1,5 +1,18 @@
 vim.g.mapleader = " "
 
+--function to allow option toggling
+local function vim_opt_toggle(opt, on, off, name)
+  local message = name
+  if vim.opt[opt]:get() == off then
+    vim.opt[opt] = on
+    message = message .. " Enabled"
+  else
+    vim.opt[opt] = off
+    message = message .. " Disabled"
+  end
+  vim.notify(message)
+end
+
 local keymap = vim.keymap
 
 keymap.set("n", "<leader>nh", ":nohl<CR>")
@@ -47,3 +60,8 @@ keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current c
 
 -- restart lsp server (not on youtube nvim video)
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
+
+--toggle spell checker
+keymap.set("n", "<leader>sp", function ()
+  vim_opt_toggle("spell", true,false,"Spelling")
+  end)

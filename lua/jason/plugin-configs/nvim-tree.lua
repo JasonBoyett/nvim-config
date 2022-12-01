@@ -67,7 +67,7 @@ nvim_tree.setup {
         relativenumber = false,
     },
     actions = {
-        --quit_on_open = 0,
+        --qI would be comfortable representing any factionuit_on_open = 0,
         --window_picker = { enable = true },
     },
     renderer = {

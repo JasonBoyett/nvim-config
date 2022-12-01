@@ -25,10 +25,8 @@ vim.opt.relativenumber = true --relative line numbers
 vim.opt.numberwidth = 4
 vim.opt.signcolumn = "yes"
 vim.opt.wrap = true --line wrapping
-vim.opt.scrolloff = 8 --sets the number of lines you can go before page starts scrolling
+vim.opt.scrolloff = 10 --sets the number of lines you can go before page starts scrolling
 --vim.opt.sidescrolloff = 8
 vim.opt.guifont = "OpenDyslexic NF" --sets the font in graphical nvim aps
 vim.opt.backspace = "indent,eol,start"
 vim.opt.background = "dark"
-
-
