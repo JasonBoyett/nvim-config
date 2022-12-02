@@ -2,15 +2,15 @@ vim.g.mapleader = " "
 
 --function to allow option toggling
 local function vim_opt_toggle(opt, on, off, name)
-  local message = name
-  if vim.opt[opt]:get() == off then
-    vim.opt[opt] = on
-    message = message .. " Enabled"
-  else
-    vim.opt[opt] = off
-    message = message .. " Disabled"
-  end
-  vim.notify(message)
+	local message = name
+	if vim.opt[opt]:get() == off then
+		vim.opt[opt] = on
+		message = message .. " Enabled"
+	else
+		vim.opt[opt] = off
+		message = message .. " Disabled"
+	end
+	vim.notify(message)
 end
 
 local keymap = vim.keymap
@@ -62,18 +62,25 @@ keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current c
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
 
 --toggle spell checker
-keymap.set("n", "<leader>sp", function ()
-  vim_opt_toggle("spell", true,false,"Spelling")
-  end)
+keymap.set("n", "<leader>sp", function()
+	vim_opt_toggle("spell", true, false, "Spelling")
+end)
 
---useful keymap that turns the semicolon into a colon in normal mode 
-keymap.set("n", ";",":")
+--useful keymap that turns the semicolon into a colon in normal mode
+keymap.set("n", ";", ":")
 
---update with leader w 
+--update with leader w
 keymap.set("n", "<leader>w", ":up<cr>")
 
 --save and quit with leader q
-keymap.set("n","<leader>q", ":wq<cr>")
+keymap.set("n", "<leader>q", ":wq<cr>")
 
 --exit without saving with leader ESC
-keymap.set("n","<leader><ESC>", ":q!<cr>")
+keymap.set("n", "<leader><ESC>", ":q!<cr>")
+
+--format hotkeys
+keymap.set("n", "<leader>sf", ":lua vim.lsp.buf.formatting_sync()<cr>")--lets user chose which formatter to use
+keymap.set("n", "<leader>f", ":Format<cr>")--uses the lsp formatter
+
+--toggle term
+keymap.set("n", "<leader>t", ":ToggleTerm<cr>")
