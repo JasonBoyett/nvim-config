@@ -69,11 +69,11 @@ end)
 --useful keymap that turns the semicolon into a colon in normal mode
 keymap.set("n", ";", ":")
 
---update with leader w
-keymap.set("n", "<leader>w", ":up<cr>")
+--save all buffers with leader w
+keymap.set("n", "<leader>w", ":wa<cr>")
 
---save and quit with leader q
-keymap.set("n", "<leader>q", ":wq<cr>")
+--save all buffers and quit with leader q
+keymap.set("n", "<leader>q", ":wa<cr>:q<cr>")
 
 --exit without saving with leader ESC
 keymap.set("n", "<leader><ESC>", ":q!<cr>")
