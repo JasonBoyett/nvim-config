@@ -110,11 +110,40 @@ return packer.startup(function(use)
 	use("rcarriga/nvim-dap-ui")
 	use("leoluz/nvim-dap-go")
 	use("nvim-telescope/telescope-dap.nvim")
-  use("jayp0521/mason-nvim-dap.nvim")
+	use("jayp0521/mason-nvim-dap.nvim")
 
 	--grammar checking because epic comment "I can't english"
 	use("rhysd/vim-grammarous")
 
+	-- comment highlighting
+	use({
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+		config = function()
+			require("todo-comments").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
+	--Start up screen
+	use({
+		"startup-nvim/startup.nvim",
+		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+		config = function()
+			require("startup").setup({
+				theme = "evil",
+			})
+		end,
+	})
+
+	--tabnine
+	use("hrsh7th/nvim-cmp") --completion
+	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
+
+  --catppucin color scheme
+  use { "catppuccin/nvim", as = "catppuccin" }
 	--done with plugin imports
 	if packer_bootstrap then
 		require("packer").sync()
