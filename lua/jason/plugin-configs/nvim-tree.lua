@@ -67,7 +67,6 @@ nvim_tree.setup {
         relativenumber = false,
     },
     actions = {
-          uncolorMe()
         --qI would be comfortable representing any factionuit_on_open = 0,
         --window_picker = { enable = true },
     },
@@ -105,4 +104,3 @@ nvim_tree.setup {
         }
     }
 }
-uncolorMe()

@@ -37,7 +37,7 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 
 -- Nvimtree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>")
 
 -- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization

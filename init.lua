@@ -25,6 +25,6 @@ require("jason.plugin-configs.debugpython")
 require("jason.plugin-configs.todo")
 require("Jason.plugin-configs.catppucin")
 require("jason.plugin-configs.tokyonight")
-
+require("function")
 --setting cursorline to be an underline
 setLine()
