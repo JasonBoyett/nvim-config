@@ -52,7 +52,7 @@ return packer.startup(function(use)
 
 	use("xiyaowong/nvim-transparent") --transparent background
 
-	--coppied and pasted code so style does not match
+	-- coppied and pasted code so style does not match
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions
@@ -144,6 +144,10 @@ return packer.startup(function(use)
 
   --catppucin color scheme
   use { "catppuccin/nvim", as = "catppuccin" }
+
+  --tokyo night color scheme
+  use ('folke/tokyonight.nvim')
+
 	--done with plugin imports
 	if packer_bootstrap then
 		require("packer").sync()

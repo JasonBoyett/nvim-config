@@ -9,6 +9,7 @@ vim.opt.mouse = "a" --allows the mouse to be used in nvim might dissable later
 vim.opt.pumheight = 10
 vim.opt.smartcase = true
 vim.opt.smartindent = true
+vim.opt.cursorline = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.swapfile = false

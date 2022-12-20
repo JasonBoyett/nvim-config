@@ -1,3 +1,4 @@
+--sourcing configuration files
 require("jason.plugins-setup")
 require("jason.plugin-configs.lsp.mason")
 require("jason.core.options")
@@ -23,3 +24,7 @@ require("jason.plugin-configs.dap-mason")
 require("jason.plugin-configs.debugpython")
 require("jason.plugin-configs.todo")
 require("Jason.plugin-configs.catppucin")
+require("jason.plugin-configs.tokyonight")
+
+--setting cursorline to be an underline
+setLine()
