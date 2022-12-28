@@ -12,3 +12,9 @@ function setLine()
   vim.cmd("hi clear Cursorline")
   vim.cmd("hi Cursorline gui=underline")
 end
+
+function set_background()
+  vim.cmd("! python3 ~/.terminal_backgrounds/selector.py")
+end
+
+--set_background()

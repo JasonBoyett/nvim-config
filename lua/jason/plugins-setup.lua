@@ -30,7 +30,7 @@ end
 return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 
-	use("Mofiqul/vscode.nvim") --color scheme
+	use("Mofiqul/vscode.nvim") --vs code like color scheme
 	use("martinsione/darkplus.nvim")
 	use("christoomey/vim-tmux-navigator")
 	use("szw/vim-maximizer") --maximizes and restores current window
@@ -148,6 +148,11 @@ return packer.startup(function(use)
   --tokyo night color scheme
   use ('folke/tokyonight.nvim')
 
+  -- one darker color scheme
+  use 'navarasu/onedark.nvim'
+
+  --harpoon
+  use('ThePrimeagen/harpoon')
 	--done with plugin imports
 	if packer_bootstrap then
 		require("packer").sync()

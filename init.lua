@@ -9,7 +9,7 @@ require("jason.plugin-configs.transparent")
 require("jason.plugin-configs.cmp")
 require("jason.plugin-configs.nvim-tree")
 require("jason.plugin-configs.lsp.lspsaga")
---require("jason.plugin-configs.lsp")
+require("jason.plugin-configs.lsp")
 require("jason.plugin-configs.lsp.lspconfig")
 require("jason.plugin-configs.lualine")
 require("jason.plugin-configs.telescope")
@@ -25,6 +25,11 @@ require("jason.plugin-configs.debugpython")
 require("jason.plugin-configs.todo")
 require("Jason.plugin-configs.catppucin")
 require("jason.plugin-configs.tokyonight")
-require("function")
+require("jason.plugin-configs.harpoon")
+require("jason.plugin-configs.onedark")
+require("jason.functions")
+
 --setting cursorline to be an underline
 setLine()
+
+

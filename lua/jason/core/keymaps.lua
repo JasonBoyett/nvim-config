@@ -83,4 +83,11 @@ keymap.set("n", "<leader>sf", ":lua vim.lsp.buf.formatting_sync()<cr>")--lets us
 keymap.set("n", "<leader>f", ":Format<cr>")--uses the lsp formatter
 
 --toggle term
-keymap.set("n", "<leader>t", ":ToggleTerm<cr>")
+keymap.set("n", "<C-\\>", ":ToggleTerm<cr>")
+
+--center when page jumping
+keymap.set("n", "<C-u>", "<C-u>zz")
+keymap.set("n", "<C-d>", "<C-u>zz")
+
+--remove highlight from search
+keymap.set("n", "<leader>/", ":noh<CR>")
