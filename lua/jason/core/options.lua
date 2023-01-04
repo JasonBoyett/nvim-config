@@ -28,6 +28,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.wrap = true --line wrapping
 vim.opt.scrolloff = 10 --sets the number of lines you can go before page starts scrolling
 --vim.opt.sidescrolloff = 8
-vim.opt.guifont = "OpenDyslexic NF" --sets the font in graphical nvim aps
+vim.opt.guifont = "OpenDyslexicAlta Nerd Font" --sets the font in graphical nvim aps
 vim.opt.backspace = "indent,eol,start"
 vim.opt.background = "dark"
+vim.cmd("set noshowmode")

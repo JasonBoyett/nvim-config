@@ -28,7 +28,7 @@ require("jason.plugin-configs.tokyonight")
 require("jason.plugin-configs.harpoon")
 require("jason.plugin-configs.onedark")
 require("jason.functions")
-
+require("jason.plugin-configs.comment")
 --setting cursorline to be an underline
 setLine()
 

@@ -153,6 +153,7 @@ return packer.startup(function(use)
 
   --harpoon
   use('ThePrimeagen/harpoon')
+
 	--done with plugin imports
 	if packer_bootstrap then
 		require("packer").sync()
