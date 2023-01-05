@@ -3,4 +3,8 @@ if not call then
   return
 end
 
-lualine.setup()
+lualine.setup({
+  options = {
+    theme = 'ayu_dark'
+  }
+})

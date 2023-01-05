@@ -3,7 +3,6 @@ require("jason.plugins-setup")
 require("jason.plugin-configs.lsp.mason")
 require("jason.core.options")
 require("jason.core.keymaps")
-require("jason.core.colorscheme")
 require("jason.plugin-configs.tree-sitter")
 require("jason.plugin-configs.transparent")
 require("jason.plugin-configs.cmp")
@@ -29,7 +28,9 @@ require("jason.plugin-configs.harpoon")
 require("jason.plugin-configs.onedark")
 require("jason.functions")
 require("jason.plugin-configs.comment")
+require("jason.plugin-configs.colorizer")
+require("jason.core.colorscheme")
 --setting cursorline to be an underline
-setLine()
+SetLine()
 
 

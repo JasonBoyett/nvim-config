@@ -8,12 +8,12 @@ end
 
 --UncolorMe()
 
-function setLine()
+function SetLine()
   vim.cmd("hi clear Cursorline")
   vim.cmd("hi Cursorline gui=underline")
 end
 
-function set_background()--this is a python function I made to randomize my background. Not included in this repo
+function Set_background()--this is a python function I made to randomize my background. Not included in this repo
   vim.cmd("! python3 ~/.terminal_backgrounds/selector.py")
 end
 

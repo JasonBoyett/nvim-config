@@ -4,4 +4,8 @@
 
 --vim.cmd("colorscheme tokyonight-night")
 
-require('onedark').load()
+--require('onedark').load()
+
+vim.cmd('colorscheme candikrush')
+
+

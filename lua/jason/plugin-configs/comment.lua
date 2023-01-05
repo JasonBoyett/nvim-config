@@ -4,4 +4,3 @@ local ok, comment = pcall(require, "Comment")
   end
 
 require("Comment").setup()
-vim.keymap.set("n", "<leader>//", "gcc")

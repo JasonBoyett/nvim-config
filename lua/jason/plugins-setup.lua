@@ -47,6 +47,7 @@ return packer.startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
+  use('nvim-treesitter/playground')
 
 	use("p00f/nvim-ts-rainbow") --colorized bracket pairs
 
@@ -133,7 +134,7 @@ return packer.startup(function(use)
 		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 		config = function()
 			require("startup").setup({
-				theme = "evil",
+				theme = "dashboard",
 			})
 		end,
 	})
@@ -153,7 +154,13 @@ return packer.startup(function(use)
 
   --harpoon
   use('ThePrimeagen/harpoon')
+  
+  --colorizer
+  use('norcalli/nvim-colorizer.lua')
 
+  --candikrush my custom color theme
+  use('JasonBoyett/candikrush')
+  
 	--done with plugin imports
 	if packer_bootstrap then
 		require("packer").sync()
