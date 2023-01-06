@@ -10,7 +10,7 @@ end
 
 function SetLine()
   vim.cmd("hi clear Cursorline")
-  vim.cmd("hi Cursorline gui=underline")
+  -- vim.cmd("hi Cursorline gui=underline")
 end
 
 function Set_background()--this is a python function I made to randomize my background. Not included in this repo
