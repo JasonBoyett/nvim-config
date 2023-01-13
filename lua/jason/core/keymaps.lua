@@ -15,8 +15,17 @@ end
 
 local keymap = vim.keymap
 
-keymap.set("n", "<leader>nh", ":nohl<CR>")
 keymap.set("n", "x", "_x")
+
+--move selected lines
+keymap.set("v", "<leader>j", ":m '>+1<CR>gv=gv")
+keymap.set("v", "<leader>k", ":m '<-2<CR>gv=gv")
+keymap.set("n", "<leader>j", ":m +1<CR>")
+keymap.set("n", "<leader>k", ":m -2<CR>")
+
+--centers the term when searching
+keymap.set("n", "n", "nzzzv")
+keymap.set("n", "N", "Nzzzv")
 
 --increment or decrement numbers
 keymap.set("n", "<leader>+", "<C-a>")
@@ -35,9 +44,6 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
 --vim maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
-
--- Nvimtree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>")
 
 -- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
@@ -83,7 +89,7 @@ keymap.set("n", "<leader>sf", ":lua vim.lsp.buf.formatting_sync()<cr>")--lets us
 keymap.set("n", "<leader>f", ":Format<cr>")--uses the lsp formatter
 
 --toggle term
-keymap.set("n", "<C-\\>", ":ToggleTerm <cr>")
+keymap.set("n", "<C-\\>", ":ToggleTerm<CR>")
 
 --center when page jumping
 keymap.set("n", "<C-u>", "<C-u>zz")

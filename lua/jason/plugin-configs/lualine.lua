@@ -4,50 +4,58 @@ if not call then
 end
 
 local colors = {
-
-  black        = '#282828',
-  white        = '#ebdbb2',
-  red          = '#fb4934',
-  green        = '#b8bb26',
-  blue         = '#83a598',
-  yellow       = '#fe8019',
-  gray         = '#a89984',
-  darkgray     = '#3c3836',
-  lightgray    = '#504945',
-  inactivegray = '#7c6f64',
+  transparent  = "#00FFFFFF",
+  red= "#F44747",
+  error_red= "#D16969",
+  peach= "#ff954f",
+  green= "#008000",
+  light_green= "#03ff13",
+  yellow= "#f7ff03",
+  dark_yellow= "#e7f520",
+  orange= "#f7be02",
+  grey_blue= "#729CB3",
+  blue= "#0096FF",
+  sky_blue= "#9cf2ff",
+  light_blue= "#11d6f5",
+  vivid_blue= "#1F51FF",
+  purple= "#AC4FC6",
+  pink= "#FE00E7",
+  cyan= "#4EC9B0",
+  white= "#ABB2BF",
+  black= "#1E1E1E",
 }
 
 local  function candikrush()
   return {
   normal = {
-    a = {bg = colors.red, fg = colors.black, gui = 'bold'},
-    b = {bg = colors.lightgray, fg = colors.white},
-    c = {bg = colors.darkgray, fg = colors.gray}
+    a = {bg = colors.purple, fg = colors.black, gui = 'bold'},
+    b = {bg = colors.transparent, fg = colors.purple, gui = 'italic'},
+    c = {bg = colors.transparent, fg = colors.white}
   },
   insert = {
     a = {bg = colors.blue, fg = colors.black, gui = 'bold'},
-    b = {bg = colors.lightgray, fg = colors.white},
-    c = {bg = colors.lightgray, fg = colors.white}
+    b = {bg = colors.transparent, fg = colors.blue, gui = 'italic'},
+    c = {bg = colors.transparent, fg = colors.white}
   },
   visual = {
     a = {bg = colors.yellow, fg = colors.black, gui = 'bold'},
-    b = {bg = colors.lightgray, fg = colors.white},
-    c = {bg = colors.inactivegray, fg = colors.black}
+    b = {bg = colors.transparent, fg = colors.yellow, gui = 'italic'},
+    c = {bg = colors.transparent, fg = colors.white}
   },
   replace = {
     a = {bg = colors.red, fg = colors.black, gui = 'bold'},
-    b = {bg = colors.lightgray, fg = colors.white},
-    c = {bg = colors.black, fg = colors.white}
+    b = {bg = colors.lightgray, fg = colors.red, gui = 'italic'},
+    c = {bg = colors.transparent, fg = colors.white}
   },
   command = {
-    a = {bg = colors.green, fg = colors.black, gui = 'bold'},
-    b = {bg = colors.lightgray, fg = colors.white},
-    c = {bg = colors.inactivegray, fg = colors.black}
+    a = {bg = colors.peach, fg = colors.black, gui = 'bold'},
+    b = {bg = colors.lightgray, fg = colors.peach, gui = 'italic'},
+    c = {bg = colors.transparent, fg = colors.white}
   },
   inactive = {
-    a = {bg = colors.darkgray, fg = colors.gray, gui = 'bold'},
-    b = {bg = colors.darkgray, fg = colors.gray},
-    c = {bg = colors.darkgray, fg = colors.gray}
+    a = {bg = colors.grey, fg = colors.purple, gui = 'bold'},
+    b = {bg = colors.grey, fg = colors.gray, gui = 'italic'},
+    c = {bg = colors.grey, fg = colors.gray}
   }
 }
 end

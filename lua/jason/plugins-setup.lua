@@ -160,7 +160,10 @@ return packer.startup(function(use)
 
   --candikrush my custom color theme
   use('JasonBoyett/candikrush')
-  
+
+  --fugitive for using git
+  use('tpope/vim-fugitive')
+
 	--done with plugin imports
 	if packer_bootstrap then
 		require("packer").sync()
