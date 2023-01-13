@@ -31,6 +31,17 @@ keymap.set("n", "N", "Nzzzv")
 keymap.set("n", "<leader>+", "<C-a>")
 keymap.set("n", "<leader>-", "<C-x>")
 
+--keymaps for debugging
+vim.keymap.set("n", "<C-5>", ":lua require'dap'.continue()<CR>")
+vim.keymap.set("n", "<C-3>", ":lua require'dap'.step_over()<CR>")
+vim.keymap.set("n", "<C-2>", ":lua require'dap'.step_into()<CR>")
+vim.keymap.set("n", "<C-1>", ":lua require'dap'.step_out()<CR>")
+vim.keymap.set("n", "<leader>b", ":lua require'dap'.toggle_breakpoint()<CR>")
+vim.keymap.set("n", "<leader>B", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
+vim.keymap.set("n", "<leader>lp", ":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>")
+vim.keymap.set("n", "<leader>dr", ":lua require'dap'.repl.open()<CR>")
+vim.keymap.set("n", "<leader>dt", ":lua require'dap-go'.debug_test()<CR>")
+
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally

@@ -112,6 +112,7 @@ return packer.startup(function(use)
 	use("leoluz/nvim-dap-go")
 	use("nvim-telescope/telescope-dap.nvim")
 	use("jayp0521/mason-nvim-dap.nvim")
+  use('mfussenegger/nvim-dap-python')
 
 	--grammar checking because epic comment "I can't english"
 	use("rhysd/vim-grammarous")

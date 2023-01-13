@@ -1,9 +1,8 @@
-local call dap = pcall(require,"dap")
+local call = pcall(require,"dap")
 if not call then
   return
 end
-dap.adapters.python = {
-  type = 'executable';
-  command = 'path/to/virtualenvs/debugpy/bin/python';
-  args = { '-m', 'debugpy.adapter' };
-}
+
+require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
+
+require('dap-python').test_runner = 'pytest'
