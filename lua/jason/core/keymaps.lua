@@ -97,3 +97,6 @@ keymap.set("n", "<C-d>", "<C-d>zz")
 
 --remove highlight from search
 keymap.set("n", "<leader>/", ":noh<CR>")
+
+--keymap for git fugitive
+keymap.set("n", "<leader>g", vim.cmd.Git)

@@ -1,5 +1,6 @@
 --sourcing configuration files
 require("jason.plugins-setup")
+require("jason.plugin-configs.fugitive")
 require("jason.plugin-configs.lsp.mason")
 require("jason.core.options")
 require("jason.core.keymaps")
