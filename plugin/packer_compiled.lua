@@ -104,15 +104,15 @@ _G.packer_plugins = {
     path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
   },
-  ["cmp-cmdline"] = {
-    loaded = true,
-    path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
-    url = "https://github.com/hrsh7th/cmp-cmdline"
-  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-nvim-lua"] = {
+    loaded = true,
+    path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
+    url = "https://github.com/hrsh7th/cmp-nvim-lua"
   },
   ["cmp-path"] = {
     loaded = true,
@@ -149,15 +149,10 @@ _G.packer_plugins = {
     path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
   },
-  ["lspkind.nvim"] = {
+  ["lsp-zero.nvim"] = {
     loaded = true,
-    path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
-    url = "https://github.com/onsails/lspkind.nvim"
-  },
-  ["lspsaga.nvim"] = {
-    loaded = true,
-    path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
-    url = "https://github.com/glepnir/lspsaga.nvim"
+    path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
+    url = "https://github.com/VonHeikemen/lsp-zero.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -183,11 +178,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
-  },
-  ["null-ls.nvim"] = {
-    loaded = true,
-    path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
-    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -320,11 +310,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
-  },
-  ["typescript.nvim"] = {
-    loaded = true,
-    path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/typescript.nvim",
-    url = "https://github.com/jose-elias-alvarez/typescript.nvim"
   },
   ["vim-fugitive"] = {
     loaded = true,
