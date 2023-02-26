@@ -122,4 +122,3 @@ keymap.set("n", "<leader>g", vim.cmd.Git)
 keymap.set("n", "<leader>gp", ":Copilot panel<CR>")
 vim.g.copilot_no_tab_map = true
 vim.api.nvim_set_keymap("i", "<S-ESC>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-
