@@ -47,6 +47,7 @@ return packer.startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
+
   use('nvim-treesitter/playground')
 
 	use("p00f/nvim-ts-rainbow") --colorized bracket pairs
@@ -55,11 +56,11 @@ return packer.startup(function(use)
 
 	-- coppied and pasted code so style does not match
 	-- cmp plugins
-	-- use("hrsh7th/nvim-cmp") -- The completion plugin
-	-- use("hrsh7th/cmp-buffer") -- buffer completions
-	-- use("hrsh7th/cmp-path") -- path completions
-	-- use("hrsh7th/cmp-cmdline") -- cmdline completions
-	-- use("saadparwaiz1/cmp_luasnip") -- snippet completions
+  use("hrsh7th/nvim-cmp") -- The completion plugin
+	use("hrsh7th/cmp-buffer") -- buffer completions
+	use("hrsh7th/cmp-path") -- path completions
+	use("hrsh7th/cmp-cmdline") -- cmdline completions
+	use("saadparwaiz1/cmp_luasnip") -- snippet completions
 
 	-- snippets
 	use("L3MON4D3/LuaSnip") --snippet engine
@@ -70,9 +71,34 @@ return packer.startup(function(use)
 	--plenty of plugins rely on this do not delete
 	use("nvim-lua/plenary.nvim")
 
-	--nvim tree
-	use("kyazdani42/nvim-web-devicons")
-	use("kyazdani42/nvim-tree.lua")
+-- 	--nvim tree
+-- use {
+--   'nvim-tree/nvim-tree.lua',
+--   requires = {
+--     'nvim-tree/nvim-web-devicons', -- optional, for file icons
+--   },
+--   tag = 'nightly' -- optional, updated every week. (see issue #1193)
+-- }
+
+  --neo tree
+  -- Unless you are still migrating, remove the deprecated commands from v1.x
+vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+
+use {
+  "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
+    requires = { 
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    }
+  }
+
+  --telescope file tree
+  use {
+      "nvim-telescope/telescope-file-browser.nvim",
+      requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+  }
 
 	-- --LSP plugins
 	-- use("jose-elias-alvarez/null-ls.nvim")
@@ -142,17 +168,17 @@ use {
 	use("rhysd/vim-grammarous")
 
 	-- comment highlighting
-	use({
-		"folke/todo-comments.nvim",
-		requires = "nvim-lua/plenary.nvim",
-		config = function()
-			require("todo-comments").setup({
+	--use({
+		--"folke/todo-comments.nvim",
+		--requires = "nvim-lua/plenary.nvim",
+		--config = function()
+			--require("todo-comments").setup({
 				-- your configuration comes here
 				-- or leave it empty to use the default settings
 				-- refer to the configuration section below
-			})
-		end,
-	})
+			--})
+		--end,
+	--})
 	--Start up screen
 	use({
 		"startup-nvim/startup.nvim",

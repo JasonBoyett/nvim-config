@@ -32,15 +32,15 @@ keymap.set("n", "<leader>+", "<C-a>")
 keymap.set("n", "<leader>-", "<C-x>")
 
 --keymaps for debugging
-vim.keymap.set("n", "<C-5>", ":lua require'dap'.continue()<CR>")
-vim.keymap.set("n", "<C-3>", ":lua require'dap'.step_over()<CR>")
-vim.keymap.set("n", "<C-2>", ":lua require'dap'.step_into()<CR>")
-vim.keymap.set("n", "<C-1>", ":lua require'dap'.step_out()<CR>")
-vim.keymap.set("n", "<leader>b", ":lua require'dap'.toggle_breakpoint()<CR>")
-vim.keymap.set("n", "<leader>B", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
-vim.keymap.set("n", "<leader>lp", ":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>")
-vim.keymap.set("n", "<leader>dr", ":lua require'dap'.repl.open()<CR>")
-vim.keymap.set("n", "<leader>dt", ":lua require'dap-go'.debug_test()<CR>")
+--vim.keymap.set("n", "<C-5>", ":lua require'dap'.continue()<CR>")
+--vim.keymap.set("n", "<C-3>", ":lua require'dap'.step_over()<CR>")
+--vim.keymap.set("n", "<C-2>", ":lua require'dap'.step_into()<CR>")
+--vim.keymap.set("n", "<C-1>", ":lua require'dap'.step_out()<CR>")
+--vim.keymap.set("n", "<leader>b", ":lua require'dap'.toggle_breakpoint()<CR>")
+--vim.keymap.set("n", "<leader>B", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
+--vim.keymap.set("n", "<leader>lp", ":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>")
+--vim.keymap.set("n", "<leader>dr", ":lua require'dap'.repl.open()<CR>")
+--vim.keymap.set("n", "<leader>dt", ":lua require'dap-go'.debug_test()<CR>")
 
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
@@ -59,8 +59,11 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 -- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 
--- nvim-tree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
+-- Neo-treei
+keymap.set("n", "<leader>e", ":Neotree toggle<CR>") -- toggle file explorer
+
+--telescope file browser
+keymap.set("n", "<leader>fe", ":Telescope file_browser<CR>") -- toggle file explorer
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
@@ -78,7 +81,7 @@ keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current c
 -- restart lsp server (not on youtube nvim video)
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
 keymap.set("n", "<leader>ca", ":lua vim.lsp.buf.code_action()<CR>")
-vim.api.nvim_set_keymap('n', '<leader>do', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>D', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>d[', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>d]', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
 -- The following command requires plug-ins "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", and optionally "kyazdani42/nvim-web-devicons" for icon support
@@ -119,6 +122,6 @@ keymap.set("n", "<leader>/", ":noh<CR>")
 keymap.set("n", "<leader>g", vim.cmd.Git)
 
 --keymaps for Copilot
-keymap.set("n", "<leader>gp", ":Copilot panel<CR>")
-vim.g.copilot_no_tab_map = true
-vim.api.nvim_set_keymap("i", "<S-ESC>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+--keymap.set("n", "<leader>gp", ":Copilot panel<CR>")
+--vim.g.copilot_no_tab_map = true
+--vim.api.nvim_set_keymap("i", "<S-ESC>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
