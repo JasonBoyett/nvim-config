@@ -2,6 +2,8 @@ local paths = {
 "user.remap",
 "user.settings",
 "user.colorscheme",
+"user.plugin-configs.which-key",
+"user.plugin-configs.autopairs",
 "user.plugin-configs.packer",
 "user.plugin-configs.comment",
 "user.plugin-configs.colorizer",
@@ -21,7 +23,14 @@ local paths = {
 "user.plugin-configs.toggleterm",
 "user.plugin-configs.transparent",
 "user.plugin-configs.tree-sitter",
-"user.plugin-configs.ts-rainbow"
+"user.plugin-configs.flash",
+-- "user.plugin-configs.hologram",
+-- "user.plugin-configs.telescope-media-viewer",
+"user.plugin-configs.ts-rainbow",
+-- "user.plugin-configs.twoslash-queries",
+"user.plugin-configs.devicons",
+"user.plugin-configs.lightbulb",
+"user.plugin-configs.pretty-hover",
 }
 
 for _, path in ipairs(paths) do

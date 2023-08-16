@@ -2,20 +2,22 @@ vim.g.mapleader = " "
 
 --function to allow option toggling
 local function vim_opt_toggle(opt, on, off, name)
-	local message = name
-	if vim.opt[opt]:get() == off then
-		vim.opt[opt] = on
-		message = message .. " Enabled"
-	else
-		vim.opt[opt] = off
-		message = message .. " Disabled"
-	end
-	vim.notify(message)
+  local message = name
+  if vim.opt[opt]:get() == off then
+    vim.opt[opt] = on
+    message = message .. " Enabled"
+  else
+    vim.opt[opt] = off
+    message = message .. " Disabled"
+  end
+  vim.notify(message)
 end
 
 local keymap = vim.keymap
 
 keymap.set("n", "x", "_x")
+--an experimental keymap to make curly braces easier to work with
+-- keymap.set("i", "{{", "{<CR>}<ESC>O")
 
 --move selected lines
 keymap.set("v", "<leader>j", ":m '>+1<CR>gv=gv")
@@ -23,9 +25,15 @@ keymap.set("v", "<leader>k", ":m '<-2<CR>gv=gv")
 keymap.set("n", "<leader>j", ":m +1<CR>")
 keymap.set("n", "<leader>k", ":m -2<CR>")
 
+--open media viewer
+keymap.set("n", "<leader>mf", ":lua require('telescope').extensions.media_files.media_files()<CR>")
+
 --centers the term when searching
 keymap.set("n", "n", "nzzzv")
 keymap.set("n", "N", "Nzzzv")
+
+--ToggleTerm
+keymap.set("n", "<leader>tt", ":ToggleTerm<CR>")
 
 --increment or decrement numbers
 keymap.set("n", "<leader>+", "<C-a>")
@@ -68,6 +76,7 @@ keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find string in 
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
+keymap.set("n", "<leader>fe", "<cmd>Telescope file_browser<cr>") -- file browser
 
 -- telescope git commands (not on youtube nvim video)
 keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>") -- list all git commits (use <cr> to checkout) ["gc" for git commits]
@@ -80,13 +89,18 @@ keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if ne
 keymap.set("n", "<leader>ca", ":lua vim.lsp.buf.code_action()<CR>")
 vim.api.nvim_set_keymap('n', '<leader>do', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>d[', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
+keymap.set("n", "<leader>rr", ":lua vim.lsp.buf.rename()<CR>")
 vim.api.nvim_set_keymap('n', '<leader>d]', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
 -- The following command requires plug-ins "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", and optionally "kyazdani42/nvim-web-devicons" for icon support
 vim.api.nvim_set_keymap('n', '<leader>dd', '<cmd>Telescope diagnostics<CR>', { noremap = true, silent = true })
 
+--hover over for documentation
+keymap.set("n", "<leader>h", "<cmd>lua vim.lsp.buf.hover()<CR>")
+
+
 --toggle spell checker
 keymap.set("n", "<leader>sp", function()
-	vim_opt_toggle("spell", true, false, "Spelling")
+  vim_opt_toggle("spell", true, false, "Spelling")
 end)
 
 --useful keymap that turns the semicolon into a colon in normal mode
@@ -102,8 +116,8 @@ keymap.set("n", "<leader>q", ":wa<cr>:q<cr>")
 keymap.set("n", "<leader><ESC>", ":q!<cr>")
 
 --format hotkeys
-keymap.set("n", "<leader>sf", ":lua vim.lsp.buf.formatting_sync()<cr>")--lets user chose which formatter to use
-keymap.set("n", "<leader>f", ":Format<cr>")--uses the lsp formatter
+keymap.set("n", "<leader>f", ":lua vim.lsp.buf.format()<cr>") --lets user chose which formatter to use
+-- keymap.set("n", "<leader>f", ":Format<cr>") --uses the lsp formatter
 
 --toggle term
 keymap.set("n", "<C-\\>", ":ToggleTerm<CR>")

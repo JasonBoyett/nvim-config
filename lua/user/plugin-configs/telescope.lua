@@ -11,6 +11,7 @@ if not actions_setup then
 end
 
 -- configure telescope
+
 telescope.setup({
   -- configure custom mappings
   defaults = {
@@ -22,6 +23,11 @@ telescope.setup({
       },
     },
   },
+  exstensions = {
+    file_browser ={
+      theme = "ivy"
+    },
+  }
 })
-
+telescope.load_extension("file_browser")
 telescope.load_extension("fzf")

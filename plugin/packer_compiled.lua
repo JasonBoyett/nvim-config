@@ -134,6 +134,21 @@ _G.packer_plugins = {
     path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
     url = "https://github.com/martinsione/darkplus.nvim"
   },
+  ["diagflow.nvim"] = {
+    loaded = true,
+    path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/diagflow.nvim",
+    url = "https://github.com/dgagn/diagflow.nvim"
+  },
+  ["flash.nvim"] = {
+    loaded = true,
+    path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/flash.nvim",
+    url = "https://github.com/folke/flash.nvim"
+  },
+  ["format-ts-errors.nvim"] = {
+    loaded = true,
+    path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/format-ts-errors.nvim",
+    url = "https://github.com/davidosomething/format-ts-errors.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -144,10 +159,20 @@ _G.packer_plugins = {
     path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  gruvbox = {
+    loaded = true,
+    path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/gruvbox",
+    url = "https://github.com/morhetz/gruvbox"
+  },
   harpoon = {
     loaded = true,
     path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
+  },
+  ["hologram.nvim"] = {
+    loaded = true,
+    path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/hologram.nvim",
+    url = "https://github.com/edluffy/hologram.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -178,6 +203,21 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["monokai-pro.nvim"] = {
+    loaded = true,
+    path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/monokai-pro.nvim",
+    url = "https://gitlab.com/__tpb/monokai-pro.nvim"
+  },
+  neoformat = {
+    loaded = true,
+    path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/neoformat",
+    url = "https://github.com/sbdchd/neoformat"
+  },
+  ["nightly.nvim"] = {
+    loaded = true,
+    path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/nightly.nvim",
+    url = "https://github.com/Alexis12119/nightly.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -213,6 +253,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
     url = "https://github.com/rcarriga/nvim-dap-ui"
+  },
+  ["nvim-lightbulb"] = {
+    loaded = true,
+    path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/nvim-lightbulb",
+    url = "https://github.com/kosayoda/nvim-lightbulb"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -274,6 +319,16 @@ _G.packer_plugins = {
     path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
+  pretty_hover = {
+    loaded = true,
+    path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/pretty_hover",
+    url = "https://github.com/Fildo7525/pretty_hover"
+  },
+  ["rose-pine"] = {
+    loaded = true,
+    path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/rose-pine",
+    url = "https://github.com/rose-pine/neovim"
+  },
   ["startup.nvim"] = {
     config = { "\27LJ\2\nL\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\ntheme\14dashboard\nsetup\fstartup\frequire\0" },
     loaded = true,
@@ -285,10 +340,20 @@ _G.packer_plugins = {
     path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/telescope-dap.nvim",
     url = "https://github.com/nvim-telescope/telescope-dap.nvim"
   },
+  ["telescope-file-browser.nvim"] = {
+    loaded = true,
+    path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
+    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
+  },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
     path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
     url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
+  },
+  ["telescope-media-files.nvim"] = {
+    loaded = true,
+    path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/telescope-media-files.nvim",
+    url = "https://github.com/nvim-telescope/telescope-media-files.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -310,6 +375,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["twoslash-queries"] = {
+    loaded = true,
+    path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/twoslash-queries",
+    url = "https://github.com/marilari88/twoslash-queries.nvim"
   },
   ["vim-fugitive"] = {
     loaded = true,
@@ -340,18 +410,23 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/vscode.nvim",
     url = "https://github.com/Mofiqul/vscode.nvim"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/Users/jasonboyett/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: todo-comments.nvim
-time([[Config for todo-comments.nvim]], true)
-try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
-time([[Config for todo-comments.nvim]], false)
 -- Config for: startup.nvim
 time([[Config for startup.nvim]], true)
 try_loadstring("\27LJ\2\nL\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\ntheme\14dashboard\nsetup\fstartup\frequire\0", "config", "startup.nvim")
 time([[Config for startup.nvim]], false)
+-- Config for: todo-comments.nvim
+time([[Config for todo-comments.nvim]], true)
+try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
+time([[Config for todo-comments.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

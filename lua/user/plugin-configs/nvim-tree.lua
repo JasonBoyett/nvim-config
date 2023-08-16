@@ -22,7 +22,10 @@ nvim_tree.setup {
         "dashboard",
         "alpha",
     },
-    --auto_close = true,
+    filters = {
+        dotfiles = false,
+    },
+    auto_close = true,
     open_on_tab = false,
     hijack_cursor = false,
     update_cwd = true,
@@ -46,7 +49,7 @@ nvim_tree.setup {
     },
     git = {
         enable = true,
-        ignore = true,
+        ignore = false,
         timeout = 500,
     },
     view = {
