@@ -1,38 +1,38 @@
-local paths = {
-"user.remap",
-"user.settings",
-"user.colorscheme",
-"user.plugin-configs.which-key",
-"user.plugin-configs.autopairs",
-"user.plugin-configs.packer",
-"user.plugin-configs.comment",
-"user.plugin-configs.colorizer",
-"user.plugin-configs.dap-mason",
-"user.plugin-configs.dapui",
-"user.plugin-configs.debugging",
-"user.plugin-configs.fugitive",
-"user.plugin-configs.gitintigration",
-"user.plugin-configs.harpoon",
-"user.plugin-configs.lsp-zero",
-"user.plugin-configs.lualine",
-"user.plugin-configs.lualine",
-"user.plugin-configs.nvim-tree",
-"user.plugin-configs.debugpython",
-"user.plugin-configs.telescope",
-"user.plugin-configs.todo-comments",
-"user.plugin-configs.toggleterm",
-"user.plugin-configs.transparent",
-"user.plugin-configs.tree-sitter",
-"user.plugin-configs.flash",
--- "user.plugin-configs.hologram",
--- "user.plugin-configs.telescope-media-viewer",
-"user.plugin-configs.ts-rainbow",
--- "user.plugin-configs.twoslash-queries",
-"user.plugin-configs.devicons",
-"user.plugin-configs.lightbulb",
-"user.plugin-configs.pretty-hover",
-}
+require("user.remap")
+require("user.plugin-configs.dracula")
+require("user.settings")
+require("user.plugin-configs.autopairs")
+require("user.plugin-configs.which-key")
+require("user.plugin-configs.packer")
+require("user.plugin-configs.comment")
+require("user.plugin-configs.colorizer")
+require("user.plugin-configs.dap-mason")
+require("user.plugin-configs.dapui")
+require("user.plugin-configs.debugging")
+require("user.plugin-configs.fugitive")
+require("user.plugin-configs.gitintigration")
+require("user.plugin-configs.harpoon")
+require("user.plugin-configs.lsp-zero")
+require("user.plugin-configs.lualine")
+require("user.plugin-configs.lualine")
+require("user.plugin-configs.debugpython")
+require("user.plugin-configs.telescope")
+require("user.plugin-configs.todo-comments")
+require("user.plugin-configs.toggleterm")
+require("user.plugin-configs.transparent")
+require("user.plugin-configs.tree-sitter")
+require("user.plugin-configs.flash")
+-- require("user.plugin-configs.hologram")
+-- require("user.plugin-configs.telescope-media-viewer")
+require("user.plugin-configs.ts-rainbow")
+-- require("user.plugin-configs.twoslash-queries")
+require("user.plugin-configs.devicons")
+require("user.plugin-configs.lightbulb")
+require("user.plugin-configs.pretty-hover")
+require("user.plugin-configs.neotree")
+require("user.plugin-configs.noice")
+require("user.plugin-configs.onedark")
+require("user.colorscheme")
 
-for _, path in ipairs(paths) do
-  require(path)
-end
+
+

@@ -6,10 +6,12 @@ end
 require("nightly").setup({
   transparent = true,
   styles = {
-    comments = { italic = true },
+    comments = { italic = true,  fg = "#9c7322" },
     functions = { italic = true },
     variables = { italic = true },
     keywords = { italic = true },
   },
-  highlights = {},
+  highlights = {
+    comments = { fg = "#9c7322" },
+  },
 })

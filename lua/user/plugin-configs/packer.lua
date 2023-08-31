@@ -34,7 +34,7 @@ return packer.startup(function(use)
   use("folke/which-key.nvim")
 
   -- error viewer
-  use('dgagn/diagflow.nvim')
+  use('dgagn/diagflow./vim')
 
   use("Mofiqul/vscode.nvim") --vs code like color scheme
   use("martinsione/darkplus.nvim")
@@ -51,8 +51,8 @@ return packer.startup(function(use)
   use {'edluffy/hologram.nvim'}
 
   --telescope media viewer
-  use('nvim-lua/popup.nvim')
-  use('nvim-lua/plenary.nvim')
+  use('nvim-lua/popup.evim')
+  use "nvim-lua/plenary.nvim"
   use('nvim-telescope/telescope.nvim')
   use('nvim-telescope/telescope-media-files.nvim')
 
@@ -93,9 +93,58 @@ return packer.startup(function(use)
   --plenty of plugins rely on this do not delete
   use("nvim-lua/plenary.nvim")
 
-  --nvim tree
-  use("kyazdani42/nvim-web-devicons")
-  use("kyazdani42/nvim-tree.lua")
+  use ({
+  "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    requires = { 
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      {
+        -- only needed if you want to use the commands with "_with_window_picker" suffix
+        's1n7ax/nvim-window-picker',
+        tag = "v1.*",
+        config = function()
+          require'window-picker'.setup({
+            autoselect_one = true,
+            include_current = false,
+            filter_rules = {
+              -- filter using buffer options
+              bo = {
+                -- if the file type is one of following, the window will be ignored
+                filetype = { 'neo-tree', "neo-tree-popup", "notify" },
+
+                -- if the buffer type is one of following, the window will be ignored
+                buftype = { 'terminal', "quickfix" },
+              },
+            },
+            other_win_hl_color = '#e35e4f',
+          })
+        end,
+      }
+    },
+    config = function ()
+      -- If you want icons for diagnostic errors, you'll need to define them somewhere:
+      vim.fn.sign_define("DiagnosticSignError",
+        {text = " ", texthl = "DiagnosticSignError"})
+      vim.fn.sign_define("DiagnosticSignWarn",
+        {text = " ", texthl = "DiagnosticSignWarn"})
+      vim.fn.sign_define("DiagnosticSignInfo",
+        {text = " ", texthl = "DiagnosticSignInfo"})
+      vim.fn.sign_define("DiagnosticSignHint",
+        {text = "󰌵", texthl = "DiagnosticSignHint"})
+
+      require("neo-tree").setup({
+      })
+
+      vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
+    end
+  })
+
+  -- improving ui
+  use("folke/noice.nvim")
+  use("MunifTanjim/nui.nvim")
+  use("rcarriga/nvim-notify")
 
   -- --LSP plugins
   -- use("jose-elias-alvarez/null-ls.nvim")
@@ -206,6 +255,9 @@ return packer.startup(function(use)
 
   --catppucin color scheme
   use { "catppuccin/nvim", as = "catppuccin" }
+
+  --dracula color scheme
+  use('Mofiqul/dracula.nvim')
 
   --tokyo night color scheme
   use('folke/tokyonight.nvim')

@@ -1,5 +1,13 @@
-require("user")
-vim.cmd("hi clear Cursorline")
+local ok, onedark = pcall(require, "onedark")
+if not ok then
+  return
+end
+
+require("onedark").setup({
+  code_style = {
+    keywords = 'italic'
+  },
+})
 
 local function update_hl( group, tbl )
     local old_hl = vim.api.nvim_get_hl_by_name( group, true )
