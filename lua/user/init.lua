@@ -33,6 +33,5 @@ require("user.plugin-configs.neotree")
 require("user.plugin-configs.noice")
 require("user.plugin-configs.onedark")
 require("user.colorscheme")
-
-
-
+require("user.plugin-configs.vim-tmux-navigator")
+require("user.plugin-configs.zen-mode")

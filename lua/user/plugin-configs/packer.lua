@@ -29,12 +29,18 @@ end
 -- add list of plugins to install
 return packer.startup(function(use)
   use("wbthomason/packer.nvim")
-
+  
   --which key
   use("folke/which-key.nvim")
 
   -- error viewer
   use('dgagn/diagflow./vim')
+
+  --zen mode
+  use({"folke/zen-mode.nvim", as = "zen-mode"})
+
+  --tmux navigator
+  use("https://github.com/christoomey/vim-tmux-navigator")
 
   use("Mofiqul/vscode.nvim") --vs code like color scheme
   use("martinsione/darkplus.nvim")
@@ -107,7 +113,7 @@ return packer.startup(function(use)
         config = function()
           require'window-picker'.setup({
             autoselect_one = true,
-            include_current = false,
+            include_current = true,
             filter_rules = {
               -- filter using buffer options
               bo = {
@@ -196,6 +202,57 @@ return packer.startup(function(use)
     requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   }
 
+  use({
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({
+
+        panel = {
+          enabled = true,
+          auto_refresh = false,
+          keymap = {
+            jump_prev = "[[",
+            jump_next = "]]",
+            accept = "<CR>",
+            refresh = "gr",
+            open = "<M-CR>"
+          },
+          layout = {
+            position = "bottom", -- | top | left | right
+            ratio = 0.3
+          },
+        },
+        suggestion = {
+          enabled = true,
+          auto_trigger = true,
+          debounce = 75,
+          keymap = {
+            accept = "<M-l>",
+            accept_word = false,
+            accept_line = false,
+            next = "<M-]>",
+            prev = "<M-[>",
+            dismiss = "<C-]>",
+          },
+        },
+        filetypes = {
+          yaml = true,
+          markdown = true,
+          help = false,
+          gitcommit = true,
+          gitrebase = false,
+          hgcommit = false,
+          svn = false,
+          cvs = false,
+          ["."] = false,
+        },
+        copilot_node_command = 'node', -- Node.js version must be > 16.x
+        server_opts_overrides = {}, 
+      })
+    end,
+  })
   --auto closing
   use("windwp/nvim-autopairs")
   use({"windwp/nvim-ts-autotag", as="nvim-ts-autotag"})

@@ -35,6 +35,9 @@ keymap.set("n", "N", "Nzzzv")
 --ToggleTerm
 keymap.set("n", "<leader>tt", ":ToggleTerm<CR>")
 
+--keymap for zen mode 
+keymap.set("n", "<leader>z", ":ZenMode<CR>")
+
 --increment or decrement numbers
 keymap.set("n", "<leader>+", "<C-a>")
 keymap.set("n", "<leader>-", "<C-x>")
@@ -97,7 +100,7 @@ vim.api.nvim_set_keymap('n', '<leader>d]', '<cmd>lua vim.diagnostic.goto_next()<
 vim.api.nvim_set_keymap('n', '<leader>dd', '<cmd>Telescope diagnostics<CR>', { noremap = true, silent = true })
 
 --hover over for documentation
-keymap.set("n", "<leader>h", "<cmd>lua vim.lsp.buf.hover()<CR>")
+keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
 
 
 --toggle spell checker
@@ -113,9 +116,6 @@ keymap.set("n", "<leader>w", ":wa<cr>")
 
 --save all buffers and quit with leader q
 keymap.set("n", "<leader>q", ":wa<cr>:q<cr>")
-
---exit without saving with leader ESC
-keymap.set("n", "<leader><ESC>", ":q!<cr>")
 
 --format hotkeys
 keymap.set("n", "<leader>f", ":lua vim.lsp.buf.format()<cr>") --lets user chose which formatter to use
@@ -137,4 +137,5 @@ keymap.set("n", "<leader>g", vim.cmd.Git)
 --keymaps for Copilot
 keymap.set("n", "<leader>gp", ":Copilot panel<CR>")
 vim.g.copilot_no_tab_map = true
-vim.api.nvim_set_keymap("i", "<S-ESC>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+-- vim.g.copilot_assume_mapped = true
+-- vim.api.nvim_set_keymap("i", "<S-ESC>", 'copilot#Accept()', { silent = true, expr = true })
