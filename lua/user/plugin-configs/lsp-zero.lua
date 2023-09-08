@@ -2,7 +2,20 @@ local lsp = require('lsp-zero').preset({
   name = 'recommended',
   set_lsp_keymaps = true,
   manage_nvim_cmp = true,
-  suggest_lsp_servers = false,
+  suggest_lsp_servers = true,
+})
+
+vim.diagnostic.config({
+  underline = true,
+  virtual_text = {
+    prefix = "",
+    spacing = 2,
+  },
+  signs = true,
+  update_in_insert = false,
+  float ={
+    focusable = true,
+  }
 })
 
 -- (Optional) Configure lua language server for neovim

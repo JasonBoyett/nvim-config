@@ -29,7 +29,6 @@ end
 -- add list of plugins to install
 return packer.startup(function(use)
   use("wbthomason/packer.nvim")
-  
   --which key
   use("folke/which-key.nvim")
 
