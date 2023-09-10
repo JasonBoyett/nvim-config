@@ -73,7 +73,7 @@ keymap.set("n", "<leader>sm", "<cdm>MaximizerToggle<CR>")
 keymap.set("n", "<leader>sm", "<cdm>MaximizerToggle<CR>") -- toggle split window maximization
 
 -- nvim-tree
-keymap.set("n", "<leader>e", "<cdm>Neotree toggle<CR>") -- toggle file explorer
+keymap.set("n", "<leader>e", "<cmd>Neotree toggle<CR>") -- toggle file explorer
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore

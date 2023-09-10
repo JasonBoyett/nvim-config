@@ -32,9 +32,6 @@ return packer.startup(function(use)
   --which key
   use("folke/which-key.nvim")
 
-  -- error viewer
-  use('dgagn/diagflow./vim')
-
   --zen mode
   use({"folke/zen-mode.nvim", as = "zen-mode"})
 
@@ -166,7 +163,7 @@ return packer.startup(function(use)
   --LSP Zero
   use {
     'VonHeikemen/lsp-zero.nvim',
-    branch = 'v1.x',
+    branch = 'v2.x',
     requires = {
       -- LSP Support
       { 'neovim/nvim-lspconfig' }, -- Required

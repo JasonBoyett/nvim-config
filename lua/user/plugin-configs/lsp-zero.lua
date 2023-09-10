@@ -8,7 +8,8 @@ local lsp = require('lsp-zero').preset({
 vim.diagnostic.config({
   underline = true,
   virtual_text = {
-    prefix = "",
+    source = "always",
+    prefix = "◆",
     spacing = 2,
   },
   signs = true,

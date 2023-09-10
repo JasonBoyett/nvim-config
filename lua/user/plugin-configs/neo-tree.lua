@@ -1,4 +1,4 @@
-local all_good, neo-tree = pcall(require, "neo-tree")
+local all_good, neotree = pcall(require, "neo-tree")
 if not all_good then
   return
 end

@@ -30,4 +30,4 @@ vim.opt.scrolloff = 10 --sets the number of lines you can go before page starts 
 --vim.opt.sidescrolloff = 8
 vim.opt.backspace = "indent,eol,start"
 vim.opt.background = "dark"
-vim.cmd("set noshowmode")
+-- vim.cmd("set noshowmode")
