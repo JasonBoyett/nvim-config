@@ -20,10 +20,10 @@ keymap.set("n", "x", "_x")
 -- keymap.set("i", "{{", "{<CR>}<ESC>O")
 
 --move selected lines
-keymap.set("v", "<leader>j", ":m '>+1<CR>gv=gv")
-keymap.set("v", "<leader>k", ":m '<-2<CR>gv=gv")
-keymap.set("n", "<leader>j", ":m +1<CR>")
-keymap.set("n", "<leader>k", ":m -2<CR>")
+keymap.set("v", "<leader>j", "<cdm>m '>+1<CR>gv=gv")
+keymap.set("v", "<leader>k", "<cdm>m '<-2<CR>gv=gv")
+keymap.set("n", "<leader>j", "<cdm>m +1<CR>")
+keymap.set("n", "<leader>k", "<cdm>m -2<CR>")
 
 --open media viewer
 keymap.set("n", "<leader>mf", "<cmd>lua require('telescope').extensions.media_files.media_files()<CR>")
