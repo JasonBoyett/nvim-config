@@ -53,7 +53,7 @@ return packer.startup(function(use)
   use('kosayoda/nvim-lightbulb')
 
   --image viewer
-  use {'edluffy/hologram.nvim'}
+  use {'edluffy/holo/ram.nvim'}
 
   --telescope media viewer
   use('nvim-lua/popup.evim')
