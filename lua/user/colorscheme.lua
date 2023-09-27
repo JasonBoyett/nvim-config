@@ -5,5 +5,6 @@
 -- vim.cmd('colorscheme vscode')
 -- vim.cmd('colorscheme nightly')
 -- vim.cmd('colorscheme onedark')
-vim.cmd('colorscheme dracula')
+-- vim.cmd('colorscheme dracula')
+vim.cmd('colorscheme kanagawa')
 

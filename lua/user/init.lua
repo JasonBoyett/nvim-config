@@ -28,9 +28,18 @@ require("user.plugin-configs.devicons")
 require("user.plugin-configs.lightbulb")
 -- require("user.plugin-configs.pretty-hover")
 require("user.plugin-configs.neotree")
-require("user.plugin-configs.noice")
 require("user.plugin-configs.onedark")
-require("user.colorscheme")
 require("user.plugin-configs.vim-tmux-navigator")
 require("user.plugin-configs.zen-mode")
 require("user.plugin-configs.cmp")
+require("user.plugin-configs.toggle-vtext")
+require("user.colorscheme")
+require("user.plugin-configs.noice")
+require("user.plugin-configs.kanagawa")
+require("user.plugin-configs.scrollEOF")
+
+
+require('notify').setup({
+  stages = 'fade_in_slide_out',
+  background_colour = '#000000',
+})

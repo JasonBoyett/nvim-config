@@ -19,6 +19,8 @@ vim.diagnostic.config({
   }
 })
 
+
+vim.keymap.set('n', '<leader>tv', '<cmd>lua Toggle_vtext()<CR>')
 -- (Optional) Configure lua language server for neovim
 lsp.nvim_workspace()
 
@@ -27,7 +29,6 @@ lsp.configure('tsserver', {
     require("twoslash-queries").attach(client, bufnr)
   end
 })
-
 lsp.setup()
 
 local status_ok, lspconfig = pcall(require, "lspconfig")

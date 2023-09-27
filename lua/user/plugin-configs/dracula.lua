@@ -8,7 +8,3 @@ local dracula = require("dracula")
 dracula.setup({
   transparent_bg = true,
 })
-
-require('notify').setup({
-  background_colour = '#000000',
-})

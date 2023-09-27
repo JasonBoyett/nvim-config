@@ -46,6 +46,9 @@ return packer.startup(function(use)
   --flash.nvim for faster movement
   use('folke/flash.nvim')
 
+  --toggling certain diagnostics
+  use('WhoIsSethDaniel/toggle-lsp-diagnostics.nvim')
+
   --cute little light bulb to show code actions are available
   use('kosayoda/nvim-lightbulb')
 
@@ -64,6 +67,9 @@ return packer.startup(function(use)
 
   --comments with gc
   use("numToStr/Comment.nvim")
+
+  --keep cursor centered
+  use("Aasim-A/scrollEOF.nvim")
 
   --tree sitter
   use({
@@ -306,6 +312,8 @@ return packer.startup(function(use)
   use("hrsh7th/nvim-cmp") --completion
   use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
 
+  --kanagawa color scheme
+  use("rebelot/kanagawa.nvim")
   --catppucin color scheme
   use { "catppuccin/nvim", as = "catppuccin" }
 
