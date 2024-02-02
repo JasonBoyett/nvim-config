@@ -1,5 +1,5 @@
 require("user")
-vim.cmd("hi clear Cursorline")
+-- vim.cmd("hi clear Cursorline")
 
 local function update_hl( group, tbl )
     local old_hl = vim.api.nvim_get_hl_by_name( group, true )
@@ -11,3 +11,4 @@ update_hl( 'statement', { italic = true } )
 update_hl( 'conditional', { italic = true } )
 update_hl( 'function', { italic = true } )
 update_hl( 'comment', {fg = '#9c7322'} ) 
+update_hl( 'SpellBad', {sp='#8e2fed'} )

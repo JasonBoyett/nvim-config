@@ -35,11 +35,22 @@ return packer.startup(function(use)
   --zen mode
   use({"folke/zen-mode.nvim", as = "zen-mode"})
 
+  --markdown viewer
+  use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
+  use({
+      "iamcco/markdown-preview.nvim",
+      run = function() vim.fn["mkdp#util#install"]() end,
+  })
+
+use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
   --tmux navigator
   use("https://github.com/christoomey/vim-tmux-navigator")
 
   use("Mofiqul/vscode.nvim") --vs code like color scheme
   use("martinsione/darkplus.nvim")
+  use("loctvl842/monokai-pro.nvim")
+  use("Shatur/neovim-ayu")
+
   use("christoomey/vim-tmux-navigator")
   use("szw/vim-maximizer") --maximizes and restores current window
 
@@ -67,6 +78,14 @@ return packer.startup(function(use)
 
   --comments with gc
   use("numToStr/Comment.nvim")
+
+  --screen snap tool
+  use({
+    "kristijanhusak/vim-carbon-now-sh",
+    as = "carbon",
+
+    
+  })
 
   --keep cursor centered
   use("Aasim-A/scrollEOF.nvim")
@@ -340,9 +359,6 @@ return packer.startup(function(use)
 
   --Rose Pine color scheme
   use({ 'rose-pine/neovim', as = 'rose-pine' })
-
-  --monokai color scheme
-  use('https://gitlab.com/__tpb/monokai-pro.nvim')
 
   --nightly color scheme
   use("Alexis12119/nightly.nvim")

@@ -19,7 +19,6 @@ configs.setup {
   indent = { enable = true, disable = { "yaml" } },
   rainbow = {
     enable = true,
-    -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
     max_file_lines = nil, -- Do not enable for files with more than n lines, int
     extended_mode = true,
     colors = { '#5fd61a', '#1ab7d6', '#e0de43', '#992285', '#cf9ef0', '#f58505', '#229963'}, -- table of hex strings
@@ -41,7 +40,7 @@ require "nvim-treesitter.configs".setup {
       focus_language = 'f',
       unfocus_language = 'F',
       update = 'R',
-      goto_node = '<cr>',
+      goto_node = '<CR>',
       show_help = '?',
     },
   },

@@ -19,6 +19,11 @@ vim.diagnostic.config({
   }
 })
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+ capabilities.offsetEncoding = 'utf-8'
+ require('lspconfig').clangd.setup{
+        capabilities = capabilities,
+}
 
 vim.keymap.set('n', '<leader>tv', '<cmd>lua Toggle_vtext()<CR>')
 -- (Optional) Configure lua language server for neovim

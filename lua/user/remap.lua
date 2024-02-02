@@ -53,6 +53,9 @@ keymap.set("n", "<leader>lp", "<cmd>lua require'dap'.set_breakpoint(nil, nil, vi
 keymap.set("n", "<leader>dr", "<cmd>lua require'dap'.repl.open()<CR>")
 keymap.set("n", "<leader>dt", "<cmd>lua require'dap-go'.debug_test()<CR>")
 
+--code snapping
+keymap.set("v", "<leader>s", ":'<,'>CarbonNowSh<CR>")
+
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
@@ -101,12 +104,10 @@ vim.api.nvim_set_keymap('n', '<leader>dd', '<cmd>Telescope diagnostics<CR>', { n
 --hover over for documentation
 keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
 
-
---toggle spell checker
+--keymap for spelling suggestions
 keymap.set("n", "<leader>sp", function()
-  vim_opt_toggle("spell", true, false, "Spelling")
-end)
-keymap.set("n", "<leader>ss", "z=")
+  require("telescope.builtin").spell_suggest(require("telescope.themes").get_cursor({}))
+end, { desc = "Spelling Suggestions" })
 
 --useful keymap that turns the semicolon into a colon in normal mode
 keymap.set("n", ";", ":")

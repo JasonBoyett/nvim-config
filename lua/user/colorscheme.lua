@@ -6,5 +6,6 @@
 -- vim.cmd('colorscheme nightly')
 -- vim.cmd('colorscheme onedark')
 -- vim.cmd('colorscheme dracula')
-vim.cmd('colorscheme kanagawa')
-
+-- vim.cmd('colorscheme kanagawa')
+-- vim.cmd('colorscheme monokai-pro-spectrum')
+vim.cmd('colorscheme ayu-dark')
