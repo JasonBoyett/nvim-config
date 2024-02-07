@@ -14,6 +14,7 @@
   "markdown-preview.nvim": { "branch": "master", "commit": "a923f5fc5ba36a3b17e289dc35dc17f66d0548ee" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "0954d7730e749d606ddf8d7ae8846848be435d53" },
   "mason.nvim": { "branch": "main", "commit": "c43eeb5614a09dc17c03a7fb49de2e05de203924" },
+  "material.nvim": { "branch": "main", "commit": "22a92aae1bba52cb8d34771e41e132ed0634bef5" },
   "neo-tree.nvim": { "branch": "v3.x", "commit": "e578fe7a5832421b0d2c5b3c0a7a1e40e0f6a47a" },
   "neovim-ayu": { "branch": "master", "commit": "0a9804db5c08dba63be9774a57e4214fd0473ce1" },
   "noice.nvim": { "branch": "main", "commit": "bf67d70bd7265d075191e7812d8eb42b9791f737" },
@@ -36,5 +37,6 @@
   "tokyonight.nvim": { "branch": "main", "commit": "610179f7f12db3d08540b6cc61434db2eaecbcff" },
   "vim-fugitive": { "branch": "master", "commit": "e7bf502a6ae492f42a91d231864e25630286319b" },
   "vscode.nvim": { "branch": "main", "commit": "380c1068612b1bfbe35d70a4f2e58be5030a0707" },
+  "xresources-nvim": { "branch": "master", "commit": "745b4df924a6c4a7d8026a3fb3a7fa5f78e6f582" },
   "yanky.nvim": { "branch": "main", "commit": "7c5cbf0122ff2dfbb6a92f14885894f65949cc8b" }
 }

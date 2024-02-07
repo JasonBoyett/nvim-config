@@ -19,6 +19,7 @@ require("nvim-treesitter.configs").setup({
 
 vim.keymap.set("n", "<LEADER>w", "<CMD>wa!<CR>", {})
 
+require"theme"
 
 local function update_hl( group, tbl )
     local old_hl = vim.api.nvim_get_hl_by_name( group, true )
