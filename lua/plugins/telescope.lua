@@ -13,5 +13,8 @@ return {
     vim.keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>")
     vim.keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>")
     vim.keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>")
+
+    require("telescope").load_extension("yank_history")
+    vim.keymap.set("n", "<leader>p", "<cmd>Telescope yank_history<cr>")
   end,
 }
