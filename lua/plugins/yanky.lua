@@ -10,7 +10,7 @@ return {
     ring = {
       history_length = 100,
       storage = "shada",
-      storage_path = vim.fn.stdpath("data") .. "/databases/yanky.db",     -- Only for sqlite storage
+      storage_path = vim.fn.stdpath("data") .. "/databases/yanky.db", -- Only for sqlite storage
       sync_with_numbered_registers = true,
       cancel_event = "update",
       ignore_registers = { "_" },
@@ -18,11 +18,11 @@ return {
     },
     picker = {
       select = {
-        action = nil,     -- nil to use default put action
+        action = nil, -- nil to use default put action
       },
       telescope = {
-        use_default_mappings = true,     -- if default mappings should be used
-        mappings = nil,                  -- nil to use default mappings or no mappings (see `use_default_mappings`)
+        use_default_mappings = true, -- if default mappings should be used
+        mappings = nil,              -- nil to use default mappings or no mappings (see `use_default_mappings`)
       },
     },
     system_clipboard = {

@@ -3,3 +3,5 @@
 -- vim.cmd.colorscheme "tokyonight-night"
 -- vim.cmd.colorscheme "ayu-dark"
 vim.cmd.colorscheme "material-deep-ocean"
+-- vim.cmd.colorscheme "base16-schemer-dark"
+-- vim.cmd.colorscheme "base16-monokai"

@@ -12,7 +12,7 @@ panel = {
       open = "<M-CR>"
     },
     layout = {
-      position = "bottom", -- | top | left | right
+      position = "bottom",
       ratio = 0.4
     },
   },
