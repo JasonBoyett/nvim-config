@@ -11,7 +11,8 @@ return {
           number = true,
           relativenumber = true,
           cursorline = true,
-          cursorcolumn = true,
+          cursorcolumn = false,
+          luastatus = 1,
         }
       },
       gitsigns = { enabled = true },
@@ -20,6 +21,6 @@ return {
         font = "+4"
       }
     }
-    vim.keymap.set("n", "<leader>z", ":ZenMode<CR>")
+    vim.keymap.set("n", "<leader>z", "<CMD>ZenMode<CR>")
   end
 }
