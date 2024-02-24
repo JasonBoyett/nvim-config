@@ -1,10 +1,10 @@
 return {
   "folke/zen-mode.nvim",
-  opts = function()
+  config = function()
     require("zen-mode").setup {
       window = {
         backdrop = 0.85,
-        width = 50,
+        width = 90,
         height = 1,
         options = {
           signcolumn = "yes",
