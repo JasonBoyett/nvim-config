@@ -84,9 +84,7 @@ return {
   config = function()
     setup(candikrush())
     vim.api.nvim_create_autocmd("ColorScheme", {
-      callback = function()
-        setup(candikrush())
-      end,
+      callback = setup(candikrush())
     })
   end,
 }
