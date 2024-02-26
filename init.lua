@@ -1,4 +1,5 @@
 require("opts")
+vim.lsp.set_log_level("off")
 
 local function hasFileExtension(str)
   local pattern = "%.([a-zA-Z0-9]+)$"
@@ -25,7 +26,7 @@ require("nvim-treesitter.configs").setup({})
 
 vim.keymap.set("n", "<LEADER>w", "<CMD>wa!<CR>", {})
 
-require("theme")
+-- require("theme")
 
 local function update_hl(group, tbl)
   local old_hl = vim.api.nvim_get_hl_by_name(group, true)
