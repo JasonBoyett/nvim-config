@@ -1,6 +1,6 @@
 return {
-  -- "JasonBoyett/Goethe.nvim",
-  dir = "/home/jboyett/Documents/dev/github/Goethe.nvim",
+  "JasonBoyett/Goethe.nvim",
+  -- dir = "/home/jboyett/Documents/dev/github/Goethe.nvim",
   opts = {
     default_theme = "vscode",
     auto_persist = true,
