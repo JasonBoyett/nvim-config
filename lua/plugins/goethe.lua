@@ -10,5 +10,11 @@ return {
       { group = "function",    tbl = { italic = true } },
       { group = "comment",     tbl = { fg = "#9c7322" } },
     },
+    theme_overrides = {
+      { theme = "ayu",        override = "ayu-mirage" },
+      { theme = "material",   override = "material-deep-ocean" },
+      { theme = "kanagawa",   override = "kanagawa-wave" },
+      { theme = "tokyonight", override = "tokyonight-night" },
+    }
   },
 }
