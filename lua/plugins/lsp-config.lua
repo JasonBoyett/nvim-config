@@ -26,6 +26,7 @@ return {
           "lua_ls",
           "tsserver",
           "gofmt",
+          "masonls",
         },
       })
     end
@@ -48,9 +49,16 @@ return {
       lspconfig.tsserver.setup({
         capabilities = capabilities
       })
+      lspconfig.prismals.setup({
+        capabilities = capabilities
+      })
+      lspconfig.tailwindcss.setup({
+        capabilities = capabilities
+      })
       lspconfig.rust_analyzer.setup({
         capabilities = capabilities
       })
+
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set('n', '<leader>do', vim.diagnostic.open_float)
       vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev)
