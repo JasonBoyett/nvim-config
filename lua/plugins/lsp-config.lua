@@ -31,19 +31,34 @@ return {
       })
     end
   },
-
+  {
+    "folk/neodev.nvim",
+  },
   {
     "neovim/nvim-lspconfig",
     lazy = false,
     priority = 50,
     config = function()
+      require("neodev").setup()
       local lspconfig = require('lspconfig')
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
       lspconfig.lua_ls.setup({
         capabilities = capabilities
       })
+      -- lspconfig.sorbet.setup({
+      --   capabilities = capabilities
+      -- })
+      lspconfig.solargraph.setup({
+        capabilities = capabilities
+      })
+      lspconfig.rubocop.setup({
+        capabilities = capabilities
+      })
       lspconfig.gopls.setup({
+        capabilities = capabilities
+      })
+      lspconfig.templ.setup({
         capabilities = capabilities
       })
       lspconfig.tsserver.setup({
@@ -51,6 +66,14 @@ return {
       })
       lspconfig.prismals.setup({
         capabilities = capabilities
+      })
+      lspconfig.pyright.setup({
+        capabilities = capabilities,
+        settings = {
+          python = {
+            pythonPath = "python3"
+          }
+        }
       })
       lspconfig.tailwindcss.setup({
         capabilities = capabilities

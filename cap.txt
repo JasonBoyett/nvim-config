@@ -1,0 +1,18 @@
+.ett/Documents/dev/github/Goethe.nvim/lua/goethe/init.lua:108: /home/jboyett/.config/nvim/init.lua..ColorScheme Autocommands for "*": Vim(append):Error executing lua callback: /home/jboyett/.config/nvim/lua/plugins/lualine.lua:86: attempt to call upvalue 'candikrush' (a table value)
+stack traceback:
+	/home/jboyett/.config/nvim/lua/plugins/lualine.lua:86: in function </home/jboyett/.config/nvim/lua/plugins/lualine.lua:85>
+	[C]: in function 'colorscheme'
+	...ett/Documents/dev/github/Goethe.nvim/lua/goethe/init.lua:108: in function 'setup'
+	...local/share/nvim/lazy/lazy.nvim/lua/lazy/core/loader.lua:372: in function <...local/share/nvim/lazy/lazy.nvim/lua/lazy/core/loader.lua:370>
+	[C]: in function 'xpcall'
+	.../.local/share/nvim/lazy/lazy.nvim/lua/lazy/core/util.lua:113: in function 'try'
+	...local/share/nvim/lazy/lazy.nvim/lua/lazy/core/loader.lua:380: in function 'config'
+	...local/share/nvim/lazy/lazy.nvim/lua/lazy/core/loader.lua:347: in function '_load'
+	...local/share/nvim/lazy/lazy.nvim/lua/lazy/core/loader.lua:190: in function 'load'
+	...local/share/nvim/lazy/lazy.nvim/lua/lazy/core/loader.lua:122: in function 'startup'
+	...oyett/.local/share/nvim/lazy/lazy.nvim/lua/lazy/init.lua:110: in function 'setup'
+	/home/jboyett/.config/nvim/init.lua:24: in main chunk
+
+# stacktrace:
+  - ~/Documents/dev/github/Goethe.nvim/lua/goethe/init.lua:108 _in_ **setup**
+  - init.lua:24

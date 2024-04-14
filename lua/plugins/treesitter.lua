@@ -5,6 +5,11 @@ return {
     priority = 50,
     config = function()
       require("nvim-treesitter.configs").setup({
+        sync_install = true,
+        modules = {},
+        ensure_installed = {},
+        ignore_install = {},
+        auto_install = true,
         textobjects = {
           select = {
             enable = true,
@@ -40,29 +45,37 @@ return {
     config = function()
       local configs = require("nvim-treesitter.configs")
       configs.setup {
+
+        modules = {},
+        auto_install = true,
         ensure_installed = "all",
         sync_install = false,
         ignore_install = { "" }, -- List of parsers to ignore installing
         highlight = {
-          enable = true,   -- false will disable the whole extension
-          disable = { "" }, -- list of language that will be disabled
+          enable = true,         -- false will disable the whole extension
+          disable = { "" },      -- list of language that will be disabled
           additional_vim_regex_highlighting = true,
 
         },
         indent = { enable = true, disable = { "yaml" } },
         rainbow = {
           enable = true,
-          max_file_lines = nil,                                                              -- Do not enable for files with more than n lines, int
+          max_file_lines = nil,                                                                     -- Do not enable for files with more than n lines, int
           extended_mode = true,
           colors = { '#5fd61a', '#1ab7d6', '#e0de43', '#992285', '#cf9ef0', '#f58505', '#229963' }, -- table of hex strings
         }
       }
 
       require "nvim-treesitter.configs".setup {
+        modules = {},
+        auto_install = true,
+        ensure_installed = "all",
+        sync_install = false,
+        ignore_install = { "" }, -- List of parsers to ignore installing
         playground = {
           enable = true,
           disable = {},
-          updatetime = 25,   -- Debounced time for highlighting nodes in the playground from source code
+          updatetime = 25,         -- Debounced time for highlighting nodes in the playground from source code
           persist_queries = false, -- Whether the query persists across vim sessions
           keybindings = {
             toggle_query_editor = 'o',
