@@ -31,20 +31,27 @@ return {
       })
     end
   },
-  {
-    "folk/neodev.nvim",
-  },
+  -- {
+  --   "folk/neodev.nvim",
+  -- },
   {
     "neovim/nvim-lspconfig",
     lazy = false,
     priority = 50,
     config = function()
-      require("neodev").setup()
+      -- require("neodev").setup()
       local lspconfig = require('lspconfig')
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
       lspconfig.lua_ls.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
+        settings = {
+          Lua = {
+            hint = {
+              enable = true,
+            }
+          }
+        }
       })
       -- lspconfig.sorbet.setup({
       --   capabilities = capabilities
@@ -52,17 +59,57 @@ return {
       lspconfig.solargraph.setup({
         capabilities = capabilities
       })
+      lspconfig.csharp_ls.setup({
+        capabilities = capabilities
+      })
       lspconfig.rubocop.setup({
         capabilities = capabilities
       })
       lspconfig.gopls.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
+        settings = {
+          hints = {
+            rangeVariableTypes = true,
+            parameterNames = true,
+            constantValues = true,
+            assignVariableTypes = true,
+            compositeLiteralFields = true,
+            compositeLiteralTypes = true,
+            functionTypeParameters = true,
+          },
+        }
       })
       lspconfig.templ.setup({
         capabilities = capabilities
       })
       lspconfig.tsserver.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
+        settings = {
+          typescript = {
+            inlayHints = {
+              includeInlayParameterNameHints = "all",
+              includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = true,
+              includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = true,
+            },
+          },
+          javascript = {
+            inlayHints = {
+              includeInlayParameterNameHints = "all",
+              includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = true,
+              includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = true,
+            },
+          },
+        }
       })
       lspconfig.prismals.setup({
         capabilities = capabilities
@@ -79,7 +126,51 @@ return {
         capabilities = capabilities
       })
       lspconfig.rust_analyzer.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
+        settings = {
+          ["rust-analyzer"] = {
+            inlayHints = {
+              bindingModeHints = {
+                enable = false,
+              },
+              chainingHints = {
+                enable = true,
+              },
+              closingBraceHints = {
+                enable = true,
+                minLines = 25,
+              },
+              closureReturnTypeHints = {
+                enable = "never",
+              },
+              lifetimeElisionHints = {
+                enable = "never",
+                useParameterNames = false,
+              },
+              maxLength = 25,
+              parameterHints = {
+                enable = true,
+              },
+              reborrowHints = {
+                enable = "never",
+              },
+              renderColons = true,
+              procMacro = {
+                enable = true,
+              },
+              cargo = {
+                buildScripts = {
+                  enable = true,
+                },
+              },
+              typeHints = {
+                enable = true,
+                hideClosureInitialization = false,
+                hideNamedConstructor = false,
+              },
+            },
+          }
+        }
       })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})

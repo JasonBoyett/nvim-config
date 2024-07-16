@@ -1,3 +1,7 @@
+local ensure_installed = {
+  "lua",
+  "rust",
+}
 return {
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
@@ -48,7 +52,7 @@ return {
 
         modules = {},
         auto_install = true,
-        ensure_installed = "all",
+        ensure_installed = ensure_installed,
         sync_install = false,
         ignore_install = { "" }, -- List of parsers to ignore installing
         highlight = {
@@ -69,7 +73,7 @@ return {
       require "nvim-treesitter.configs".setup {
         modules = {},
         auto_install = true,
-        ensure_installed = "all",
+        ensure_installed = ensure_installed,
         sync_install = false,
         ignore_install = { "" }, -- List of parsers to ignore installing
         playground = {
