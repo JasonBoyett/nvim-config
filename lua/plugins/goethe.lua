@@ -2,7 +2,7 @@ return {
 	"JasonBoyett/Goethe.nvim",
 	-- dir = "/home/jboyett/Documents/dev/github/Goethe.nvim",
 	opts = {
-		default_theme = "vscode",
+		default_theme = "catppuccin",
 		auto_persist = true,
 		override_groups = {
 			{ group = "statement", tbl = { italic = true } },
@@ -15,7 +15,7 @@ return {
 			{ theme = "material", override = "material-deep-ocean" },
 			{ theme = "kanagawa", override = "kanagawa-wave" },
 			{ theme = "tokyonight", override = "tokyonight-night" },
-			{ theme = "catpuccin", override = "catpuccin-mocha" },
+			{ theme = "catppuccin", override = "catppuccin-mocha" },
 		},
 	},
 }

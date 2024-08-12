@@ -1,4 +1,3 @@
-local c = require('vscode.colors').get_colors()
 return {
   "Mofiqul/vscode.nvim",
   opts = {

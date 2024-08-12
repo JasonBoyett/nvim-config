@@ -32,14 +32,14 @@ return {
 		end,
 	},
 	{
-		"folk/neodev.nvim",
+		-- "folk/neodev.nvim",
 	},
 	{
 		"neovim/nvim-lspconfig",
 		lazy = false,
 		priority = 50,
 		config = function()
-			require("neodev").setup()
+			-- require("neodev").setup()
 			local lspconfig = require("lspconfig")
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
