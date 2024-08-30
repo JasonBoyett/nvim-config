@@ -9,6 +9,9 @@ return {
         border = "rounded",
       },
       experimental_watch_for_changes = true,
+      view_options = {
+        show_hidden = true,
+      }
     })
     vim.keymap.set(
       "n",
