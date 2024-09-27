@@ -6,6 +6,14 @@ return {
     auto_persist = true,
     override_groups = {
       { group = "statement",   tbl = { italic = true } },
+      {
+        group = "LspInlayHint",
+        tbl = {
+          bg = "NONE",
+          italic = true,
+          fg = "#5f6f72",
+        },
+      },
       { group = "conditional", tbl = { italic = true } },
       { group = "function",    tbl = { italic = true } },
       { group = "comment",     tbl = { fg = "#9c7322" } },

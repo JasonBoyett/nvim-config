@@ -35,6 +35,9 @@ return {
     -- "folk/neodev.nvim",
   },
   {
+    "folke/lazydev.nvim",
+  },
+  {
     "neovim/nvim-lspconfig",
     lazy = false,
     priority = 50,
@@ -56,6 +59,9 @@ return {
       lspconfig.dartls.setup({
         capabilities = capabilities,
       })
+      lspconfig.elixirls.setup({
+        capabilities = capabilities,
+      })
       lspconfig.solargraph.setup({
         capabilities = capabilities,
       })
@@ -68,14 +74,12 @@ return {
       lspconfig.gopls.setup({
         capabilities = capabilities,
         settings = {
-          hints = {
-            rangeVariableTypes = true,
-            parameterNames = true,
-            constantValues = true,
-            assignVariableTypes = true,
-            compositeLiteralFields = true,
-            compositeLiteralTypes = true,
-            functionTypeParameters = true,
+          gopls = {
+            ["ui.inlayhing.hints"] = {
+              compositeLiteralFields = true,
+              constantValues = true,
+              parameterNames = true,
+            },
           },
         },
       })
