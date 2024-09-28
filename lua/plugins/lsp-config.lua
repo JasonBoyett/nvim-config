@@ -59,6 +59,9 @@ return {
       lspconfig.dartls.setup({
         capabilities = capabilities,
       })
+      lspconfig.gleam.setup({
+        capabilities = capabilities,
+      })
       lspconfig.elixirls.setup({
         capabilities = capabilities,
       })
@@ -177,7 +180,6 @@ return {
         },
       })
 
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<leader>do", vim.diagnostic.open_float)
       vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev)
       vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next)
