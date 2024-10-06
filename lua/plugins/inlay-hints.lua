@@ -7,6 +7,10 @@ return {
 	dependencies = { "neovim/nvim-lspconfig" },
 	config = function()
 		require("inlay-hints").setup()
+		local toggle_hints = function()
+			vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+		end
+		vim.keymap.set("n", "<LEADER>hh", toggle_hints, {})
 		vim.api.nvim_create_autocmd("BufEnter", {
 			callback = function()
 				local enable = true
