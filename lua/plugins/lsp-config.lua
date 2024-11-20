@@ -1,4 +1,116 @@
 local vim = vim
+
+local function pyright(capabilities)
+  return {
+    capabilities = capabilities,
+    settings = {
+      python = {
+        pythonPath = "python3",
+      },
+    },
+  }
+end
+
+local function go(capabilities)
+  return {
+    capabilities = capabilities,
+    settings = {
+      gopls = {
+        ["ui.inlayhing.hints"] = {
+          compositeLiteralFields = true,
+          constantValues = true,
+          parameterNames = true,
+        },
+      },
+    },
+  }
+end
+
+local function rust(capabilities)
+  return {
+    capabilities = capabilities,
+    settings = {
+      ["rust-analyzer"] = {
+        inlayHints = {
+          bindingModeHints = {
+            enable = false,
+          },
+          chainingHints = {
+            enable = true,
+          },
+          closingBraceHints = {
+            enable = true,
+            minLines = 25,
+          },
+          closureReturnTypeHints = {
+            enable = "never",
+          },
+          lifetimeElisionHints = {
+            enable = "never",
+            useParameterNames = false,
+          },
+          maxLength = 25,
+          parameterHints = {
+            enable = true,
+          },
+          reborrowHints = {
+            enable = "never",
+          },
+          renderColons = true,
+          procMacro = {
+            enable = true,
+          },
+          cargo = {
+            buildScripts = {
+              enable = true,
+            },
+          },
+          typeHints = {
+            enable = true,
+            hideClosureInitialization = false,
+            hideNamedConstructor = false,
+          },
+        },
+      },
+    },
+  }
+end
+
+local function typescript(capabilities)
+  return {
+    capabilities = capabilities,
+    settings = {
+      typescript = {
+        format = {
+          semicolons = "remove"
+        },
+        inlayHints = {
+          includeInlayParameterNameHints = "literals",
+          includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+          includeInlayFunctionParameterTypeHints = false,
+          includeInlayVariableTypeHints = false,
+          includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+          includeInlayPropertyDeclarationTypeHints = false,
+          includeInlayFunctionLikeReturnTypeHints = false,
+          includeInlayEnumMemberValueHints = true,
+        },
+      },
+      javascript = {
+        inlayHints = {
+          includeInlayParameterNameHints = "all",
+          includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+          includeInlayFunctionParameterTypeHints = true,
+          includeInlayVariableTypeHints = true,
+          includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+          includeInlayPropertyDeclarationTypeHints = true,
+          includeInlayFunctionLikeReturnTypeHints = true,
+          includeInlayEnumMemberValueHints = true,
+        },
+      },
+    },
+  }
+end
+
 return {
   {
     "williamboman/mason.nvim",
@@ -55,129 +167,26 @@ return {
           },
         },
       })
-      lspconfig.dartls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.gleam.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.elixirls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.solargraph.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.csharp_ls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.rubocop.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.gopls.setup({
-        capabilities = capabilities,
-        settings = {
-          gopls = {
-            ["ui.inlayhing.hints"] = {
-              compositeLiteralFields = true,
-              constantValues = true,
-              parameterNames = true,
-            },
-          },
-        },
-      })
-      lspconfig.templ.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.ts_ls.setup({
-        capabilities = capabilities,
-        settings = {
-          typescript = {
-            inlayHints = {
-              includeInlayParameterNameHints = "all",
-              includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-              includeInlayFunctionParameterTypeHints = true,
-              includeInlayVariableTypeHints = true,
-              includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-              includeInlayPropertyDeclarationTypeHints = true,
-              includeInlayFunctionLikeReturnTypeHints = true,
-              includeInlayEnumMemberValueHints = true,
-            },
-          },
-          javascript = {
-            inlayHints = {
-              includeInlayParameterNameHints = "all",
-              includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-              includeInlayFunctionParameterTypeHints = true,
-              includeInlayVariableTypeHints = true,
-              includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-              includeInlayPropertyDeclarationTypeHints = true,
-              includeInlayFunctionLikeReturnTypeHints = true,
-              includeInlayEnumMemberValueHints = true,
-            },
-          },
-        },
-      })
-      lspconfig.prismals.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.pyright.setup({
-        capabilities = capabilities,
-        settings = {
-          python = {
-            pythonPath = "python3",
-          },
-        },
-      })
-      lspconfig.tailwindcss.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.rust_analyzer.setup({
-        capabilities = capabilities,
-        settings = {
-          ["rust-analyzer"] = {
-            inlayHints = {
-              bindingModeHints = {
-                enable = false,
-              },
-              chainingHints = {
-                enable = true,
-              },
-              closingBraceHints = {
-                enable = true,
-                minLines = 25,
-              },
-              closureReturnTypeHints = {
-                enable = "never",
-              },
-              lifetimeElisionHints = {
-                enable = "never",
-                useParameterNames = false,
-              },
-              maxLength = 25,
-              parameterHints = {
-                enable = true,
-              },
-              reborrowHints = {
-                enable = "never",
-              },
-              renderColons = true,
-              procMacro = {
-                enable = true,
-              },
-              cargo = {
-                buildScripts = {
-                  enable = true,
-                },
-              },
-              typeHints = {
-                enable = true,
-                hideClosureInitialization = false,
-                hideNamedConstructor = false,
-              },
-            },
-          },
-        },
-      })
+
+
+      -- lsps that require special settings
+      lspconfig.rust_analyzer.setup(rust(capabilities))
+      lspconfig.gopls.setup(go(capabilities))
+      lspconfig.ts_ls.setup(typescript(capabilities))
+      lspconfig.pyright.setup(pyright(capabilities))
+      lspconfig.tailwindcss.setup({ capabilities = capabilities })
+
+      -- lsps that don't require special settings
+      lspconfig.dartls.setup({ capabilities = capabilities })
+      lspconfig.gleam.setup({ capabilities = capabilities })
+      lspconfig.elixirls.setup({ capabilities = capabilities })
+      lspconfig.solargraph.setup({ capabilities = capabilities })
+      lspconfig.csharp_ls.setup({ capabilities = capabilities })
+      lspconfig.eslint.setup({ capabilities = capabilities })
+      lspconfig.rubocop.setup({ capabilities = capabilities })
+      lspconfig.templ.setup({ capabilities = capabilities })
+      lspconfig.prismals.setup({ capabilities = capabilities })
+      lspconfig.tailwindcss.setup({ capabilities = capabilities })
 
       vim.keymap.set("n", "<leader>do", vim.diagnostic.open_float)
       vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev)
