@@ -155,7 +155,7 @@ return {
     config = function()
       -- require("neodev").setup()
       local lspconfig = require("lspconfig")
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      local capabilities = require("blink.cmp").get_lsp_capabilities()
 
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
@@ -168,6 +168,14 @@ return {
         },
       })
 
+      local swift = {
+        -- root_dir = lspconfig.util.root_pattern(
+        --   '.git',
+        --   'Package.swift',
+        --   'compile_commands.json'
+        -- ),
+      }
+
 
       -- lsps that require special settings
       lspconfig.rust_analyzer.setup(rust(capabilities))
@@ -175,6 +183,9 @@ return {
       lspconfig.ts_ls.setup(typescript(capabilities))
       lspconfig.pyright.setup(pyright(capabilities))
       lspconfig.tailwindcss.setup({ capabilities = capabilities })
+      lspconfig["sourcekit-lsp"].setup(swift)
+      lspconfig.sourcekit_lsp.setup(swift)
+      lspconfig.sourcekit.setup(swift)
 
       -- lsps that don't require special settings
       lspconfig.dartls.setup({ capabilities = capabilities })
@@ -189,8 +200,8 @@ return {
       lspconfig.tailwindcss.setup({ capabilities = capabilities })
 
       vim.keymap.set("n", "<leader>do", vim.diagnostic.open_float)
-      vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev)
-      vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next)
+      vim.keymap.set("n", "<M-p>", vim.diagnostic.goto_prev)
+      vim.keymap.set("n", "<M-n>", vim.diagnostic.goto_next)
       vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
       local opts = {}
       vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)

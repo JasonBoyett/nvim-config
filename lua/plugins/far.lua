@@ -1,0 +1,3 @@
+return {
+  "brooth/far.vim"
+}

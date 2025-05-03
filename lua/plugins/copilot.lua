@@ -1,3 +1,9 @@
+local device_name = vim.env.DEVICE_NAME
+
+if device_name == "Work Laptop" then
+  return {}
+end
+
 return {
   "zbirenbaum/copilot.lua",
   opts = {
