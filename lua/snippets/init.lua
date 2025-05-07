@@ -1,6 +1,7 @@
 local language_snippets = {
   go = require("snippets.go"),
   lua = require("snippets.lua_lang"),
+  typescript = require("snippets.typescript"),
 }
 
 return function()
