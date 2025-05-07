@@ -28,7 +28,8 @@ return {
         },
       },
 
-      copilot,
+      -- copilot,
+
       { group = "statement",              tbl = { italic = true } },
       { group = "conditional",            tbl = { italic = true } },
       { group = "Keyword",                tbl = { italic = true } },
@@ -50,6 +51,7 @@ return {
       { group = "identifier",             tbl = { italic = false } },
       { group = "string",                 tbl = { italic = false } },
       { group = "comment",                tbl = { fg = "#9c7322" } },
+      { group = "CmpItemKindSupermaven",  tbl = { fg = "#ffffff" } },
     },
     theme_overrides = {
       { theme = "ayu",        override = "ayu-mirage" },

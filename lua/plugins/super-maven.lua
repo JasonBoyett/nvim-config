@@ -7,5 +7,9 @@ return {
     },
     log_level = "off",
     disable_keymap = true,
+    color = {
+      suggestion_color = "#ffffff",
+      cterm = 244,
+    },
   }
 }
