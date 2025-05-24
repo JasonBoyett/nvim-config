@@ -26,22 +26,13 @@ return {
       require('telescope.builtin').grep_string({ search = word })
     end, { desc = 'Grep word under cursor' })
     vim.keymap.set('v', '<leader>fc', function()
-      local _, ls, cs = table.unpack(vim.fn.getpos("'<"))
-      local _, le, ce = table.unpack(vim.fn.getpos("'>"))
-
-      local lines = vim.fn.getline(ls, le)
-      if #lines == 0 then return end
-
-      lines[#lines] = string.sub(lines[#lines], 1, ce)
-      lines[1] = string.sub(lines[1], cs)
-
-      local text = table.concat(lines, ' '):gsub("\n", ""):gsub('"', '\\"')
-
-      require('telescope.builtin').grep_string({
-        search = text,
+      local selection = vim.fn.getline("'<", "'>")
+      selection = table.concat(selection, "\n")
+      require('telescope.builtin').live_grep({
+        default_text = selection
       })
-    end, { desc = 'Telescope grep smart visual selection' })
-    require("telescope").load_extension("yank_history")
+    end, { desc = 'Search selected text with live grep' })
+
     vim.keymap.set("n", "<leader>p", "<cmd>Telescope yank_history<cr>")
   end,
 }
