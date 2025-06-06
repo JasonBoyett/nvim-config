@@ -1,6 +1,6 @@
 return {
-  "startup-nvim/startup.nvim",
-  opts = {
-    theme = "dashboard",
-  },
+  -- "startup-nvim/startup.nvim",
+  -- opts = {
+  --   theme = "dashboard",
+  -- },
 }

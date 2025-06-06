@@ -6,7 +6,7 @@ return {
   pritority = 1,
   config = function()
     local builtin = require("telescope.builtin")
-    vim.keymap.set("n", "<LEADER>ff", builtin.find_files, {})
+    -- vim.keymap.set("n", "<LEADER>ff", builtin.find_files, {})
     vim.keymap.set("n", "<LEADER>fs", builtin.live_grep, {})
     vim.api.nvim_set_keymap(
       "n",
