@@ -26,6 +26,20 @@ local function go(capabilities)
   }
 end
 
+local function dart(capabilities)
+  return {
+    capabilities = capabilities,
+    root_dir = require('lspconfig.util').root_pattern(
+      'melos.yaml',
+      'melos.yml'
+    ),
+    init_options = {
+      onlyAnalyzeProjectsWithOpenFiles = false, -- Key for workspace-wide analysis
+      suggestFromUnimportedLibraries = true,
+    },
+  }
+end
+
 local function rust(capabilities)
   return {
     capabilities = capabilities,
@@ -169,11 +183,11 @@ return {
       })
 
       local swift = {
-        -- root_dir = lspconfig.util.root_pattern(
-        --   '.git',
-        --   'Package.swift',
-        --   'compile_commands.json'
-        -- ),
+        root_dir = lspconfig.util.root_pattern(
+          '.git',
+          'Package.swift',
+          'compile_commands.json'
+        ),
       }
 
 
@@ -182,13 +196,11 @@ return {
       lspconfig.gopls.setup(go(capabilities))
       lspconfig.ts_ls.setup(typescript(capabilities))
       lspconfig.pyright.setup(pyright(capabilities))
-      lspconfig.tailwindcss.setup({ capabilities = capabilities })
-      lspconfig["sourcekit-lsp"].setup(swift)
-      lspconfig.sourcekit_lsp.setup(swift)
+      lspconfig.dartls.setup(dart(capabilities))
       lspconfig.sourcekit.setup(swift)
 
       -- lsps that don't require special settings
-      lspconfig.dartls.setup({ capabilities = capabilities })
+      lspconfig.tailwindcss.setup({ capabilities = capabilities })
       lspconfig.gleam.setup({ capabilities = capabilities })
       lspconfig.elixirls.setup({ capabilities = capabilities })
       lspconfig.solargraph.setup({ capabilities = capabilities })
