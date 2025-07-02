@@ -201,6 +201,7 @@ return {
 
       -- lsps that don't require special settings
       lspconfig.tailwindcss.setup({ capabilities = capabilities })
+      lspconfig.dcm.setup({ capabilities = capabilities })
       lspconfig.gleam.setup({ capabilities = capabilities })
       lspconfig.elixirls.setup({ capabilities = capabilities })
       lspconfig.solargraph.setup({ capabilities = capabilities })
