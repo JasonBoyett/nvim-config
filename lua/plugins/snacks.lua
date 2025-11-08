@@ -21,7 +21,6 @@ return {
     words = { enabled = true },
   },
   keys = {
-    { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
     -- { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
   }
 }

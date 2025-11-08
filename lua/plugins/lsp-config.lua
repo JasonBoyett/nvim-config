@@ -5,7 +5,31 @@ local function pyright(capabilities)
     capabilities = capabilities,
     settings = {
       python = {
-        pythonPath = "python3",
+        pythonPath = vim.fn.getcwd() .. "/.venv/bin/python",
+        venvPath = vim.fn.getcwd() .. "/.venv/bin/",
+        analysis = {
+          diagnosticSeverityOverrides = {
+            reportUndefinedVariable = "information"
+          }
+        }
+      },
+    },
+  }
+end
+
+local function tailwind(capabilities)
+  return {
+    capabilities = capabilities,
+    settings = {
+      tailwindCSS = {
+        experimental = {
+          classRegex = {
+            { "cva\\(([^)]*)\\)",  "[\"'`]([^\"'`]*).*?[\"'`]" },
+            { "cx\\(([^)]*)\\)",   "(?:'|\"|`)([^']*)(?:'|\"|`)" },
+            { "cn\\(([^)]*)\\)",   "[\"'`]([^\"'`]*).*?[\"'`]" },
+            { "([a-zA-Z0-9\\-:]+)" },
+          },
+        },
       },
     },
   }
@@ -92,36 +116,18 @@ end
 
 local function typescript(capabilities)
   return {
-    capabilities = capabilities,
-    settings = {
-      typescript = {
-        format = {
-          semicolons = "remove"
-        },
-        inlayHints = {
-          includeInlayParameterNameHints = "literals",
-          includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-          includeInlayFunctionParameterTypeHints = false,
-          includeInlayVariableTypeHints = false,
-          includeInlayVariableTypeHintsWhenTypeMatchesName = false,
-          includeInlayPropertyDeclarationTypeHints = false,
-          includeInlayFunctionLikeReturnTypeHints = false,
-          includeInlayEnumMemberValueHints = true,
-        },
-      },
-      javascript = {
-        inlayHints = {
-          includeInlayParameterNameHints = "all",
-          includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-          includeInlayFunctionParameterTypeHints = true,
-          includeInlayVariableTypeHints = true,
-          includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-          includeInlayPropertyDeclarationTypeHints = true,
-          includeInlayFunctionLikeReturnTypeHints = true,
-          includeInlayEnumMemberValueHints = true,
-        },
+    typescript = {
+      tsserver = {
+        maxTsServerMemory = 8192,
       },
     },
+    initializationOptions = {
+      preferences = {
+        includeCompletionsForModuleExports = false,
+      }
+    },
+    capabilities = capabilities,
+    cmd = { "typescript-language-server", "--stdio" },
   }
 end
 
@@ -168,10 +174,10 @@ return {
     priority = 50,
     config = function()
       -- require("neodev").setup()
-      local lspconfig = require("lspconfig")
+      local lspconfig = vim.lsp.config
       local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-      lspconfig.lua_ls.setup({
+      lspconfig("lua_ls", {
         capabilities = capabilities,
         settings = {
           Lua = {
@@ -182,40 +188,57 @@ return {
         },
       })
 
-      local swift = {
-        root_dir = lspconfig.util.root_pattern(
-          '.git',
-          'Package.swift',
-          'compile_commands.json'
-        ),
-      }
 
 
-      -- lsps that require special settings
-      lspconfig.rust_analyzer.setup(rust(capabilities))
-      lspconfig.gopls.setup(go(capabilities))
-      lspconfig.ts_ls.setup(typescript(capabilities))
-      lspconfig.pyright.setup(pyright(capabilities))
-      lspconfig.dartls.setup(dart(capabilities))
-      lspconfig.sourcekit.setup(swift)
+      -- -- lsps that require special settings
+      lspconfig("ts_ls", {
+        on_attatch = function(client, bufnr)
+          require("workspace-diagnostics")
+              .populate_workspace_diagnostics(client, bufnr)
+        end,
+        capabilities = capabilities
+      })
+      lspconfig("rust_analyzer", rust(capabilities))
+      lspconfig("gopls", go(capabilities))
+      lspconfig("tailwindcss", tailwind(capabilities))
+      lspconfig("pyright", pyright(capabilities))
+      lspconfig("dartls", dart(capabilities))
 
       -- lsps that don't require special settings
-      lspconfig.tailwindcss.setup({ capabilities = capabilities })
-      lspconfig.dcm.setup({ capabilities = capabilities })
-      lspconfig.gleam.setup({ capabilities = capabilities })
-      lspconfig.elixirls.setup({ capabilities = capabilities })
-      lspconfig.solargraph.setup({ capabilities = capabilities })
-      lspconfig.csharp_ls.setup({ capabilities = capabilities })
-      lspconfig.eslint.setup({ capabilities = capabilities })
-      lspconfig.rubocop.setup({ capabilities = capabilities })
-      lspconfig.templ.setup({ capabilities = capabilities })
-      lspconfig.prismals.setup({ capabilities = capabilities })
-      lspconfig.tailwindcss.setup({ capabilities = capabilities })
+      lspconfig("gleam", { capabilities = capabilities })
+      lspconfig("elixirls", { capabilities = capabilities })
+      lspconfig("solargraph", { capabilities = capabilities })
+      lspconfig("csharp_ls", { capabilities = capabilities })
+      lspconfig("eslint", { capabilities = capabilities })
+      lspconfig("rubocop", { capabilities = capabilities })
+      lspconfig("templ", { capabilities = capabilities })
+      lspconfig("prismals", { capabilities = capabilities })
+      lspconfig("tailwindcss", { capabilities = capabilities })
+
+      vim.lsp.enable({
+        "eslint",
+        "ts_ls",
+        "lua_ls",
+        "rust_analyzer",
+        "gopls",
+        "tailwindcss",
+        "dartls",
+        "pyright",
+        "gleam",
+        "elixirls",
+        "solargraph",
+        "csharp_ls",
+        "rubocop",
+        "templ",
+        "prismals",
+        "tailwindcss",
+      })
 
       vim.keymap.set("n", "<leader>do", vim.diagnostic.open_float)
       vim.keymap.set("n", "<M-p>", vim.diagnostic.goto_prev)
       vim.keymap.set("n", "<M-n>", vim.diagnostic.goto_next)
       vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
+
       local opts = {}
       vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
@@ -236,9 +259,18 @@ return {
       end, opts)
 
       -- auto command to format on save
-      vim.api.nvim_create_autocmd("BufWrite", {
+
+
+
+      local format_augroup = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
+
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        group = format_augroup,
         callback = function()
-          vim.lsp.buf.format()
+          local clients = vim.lsp.get_clients({ bufnr = 0, methods = { "textDocument/formatting" } })
+          if #clients > 0 then
+            vim.lsp.buf.format({ async = true, timeout_ms = 2000 })
+          end
         end,
       })
     end,

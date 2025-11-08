@@ -25,6 +25,8 @@ return {
               ["if"] = "@function.inner",
               ["ac"] = "@class.outer",
               ["ic"] = "@class.inner",
+              ["at"] = "@tag.outer",
+              ["it"] = "@tag.inner",
               ["as"] = {
                 query = "@scope",
                 query_group = "locals",

@@ -1,6 +1,5 @@
 return {
   "nvim-telescope/telescope.nvim",
-  tag = "0.1.5",
   dependencies = { "nvim-lua/plenary.nvim" },
   lazy = false,
   pritority = 1,
@@ -14,6 +13,7 @@ return {
       "<cmd>Telescope diagnostics<CR>",
       { noremap = true, silent = true }
     )
+
     -- telescope git commands
     vim.keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>")
     vim.keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>")

@@ -1,5 +1,7 @@
 return {
   "rmagatti/goto-preview",
+  lazy = true,
+  priority = 1000,
   opts = {
     width = 120,
     height = 15,
